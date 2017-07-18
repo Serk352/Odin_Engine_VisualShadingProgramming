@@ -1,0 +1,12 @@
+*.db
+Bin/x64/
+Bin/x86/
+Intermediate/
+Lib/
+*.opendb
+
+*.bat
+
+*.jpg
+
+*.OBJ
