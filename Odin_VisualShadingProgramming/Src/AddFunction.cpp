@@ -14,7 +14,6 @@ namespace OE_SDK
 
 	}
 
-
 	//Function: This function allows
 	//esta funcion recibe un numero de parametros y vector de variables, 
 	bool AddFunction::AreValidValues(int prmNumOfParameters, Vector<sInputandOutput>& prmVariables)
@@ -140,8 +139,43 @@ namespace OE_SDK
 	}
 
 
+
+	/************************************************************************/
+	/* Template                                                             */
+	/************************************************************************/
+	/*
+	La forma de definir un template es de la siguiente forma:
+
+	template<typename T>
+	Template<class T>
+
+	La diferencia entre estos dos tipos es la siguiente:
+
+	ambas funcionan de la misma forma, reciben una tipo X y automaticamente
+	cambian en todos los lugares donde se uso T por X.
+
+	El conflicto o la diferencia reside en que si es un class T, el recibirá cualquier
+	cosa y no hara ninguna revisión de si el objeto es valido, a que me refiero,
+	si a T, siendo un class, se le sustituye por un objeto de clase, digamos Texture
+	y adentro de scoope donde usamos esto, queremos llamar a una función de la clase
+	Texture tendrá cierto conflicto por que el no hizo la comprobación de si el objeto que
+	recibio en el template tiene un metodo del que se le pidio.
+
+	Si en vez de esto usamos un typename, el hará la comprobación del tipo y sabrá
+	si tiene o no un método con el nombre del que se le llamó.
+
+
+
+	*/
+
+
+
+
 	/////////////////////////////////////Integers/////////////////////////////////
 	//Two Integers
+
+
+
 	void* AddFunction::IntegerAdd(int32 a, int32 b)
 	{
 		int32 result = a + b;

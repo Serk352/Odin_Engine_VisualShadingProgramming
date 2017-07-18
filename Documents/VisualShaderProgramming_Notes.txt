@@ -1,0 +1,31 @@
+Nota 1 (17/07/17):
+
+El principal aproblema que había encontrado durante el desarrollo del proyecto era como insertaría la información generada por 
+la api en el código del shader.
+
+El primer acercamiento se penso en literalmente inyectar código en archivo .hlsl, si embargo aún no sabía como haría esto.
+
+Despues del alcanzar el nirvana mientras me bañaba, entendi que, solo tenia que generar un .hlsl con una 
+estructura predefinida, un template o plantilla o machote, que  definiera un efecto, por ende en la api solo tendría que
+rellenar ciertos parametros del shader con ciertos valores, los cuales se los enviare con constants buffers y asi no tengo que 
+inyectar código, solo mover valores, en caso de querer otro efecto, solo se cambia el template de efecto. ^~^ 
+
+
+Idea:
+
+para la conexión de nodos, es preferible por ahora hacerlo con colisiónes por la posición del mouse,
+
+para no llamar a revisión cada nodo existen, lo mejor seria tener un manager(syngraph) de los nodos, y dividir la zona en cuadrantes para saber
+cuales revisar y mejorar el rendimiento.
+
+Para generar la busqueda de los nodos por sectores lo mejor sería implementar un path finding.
+
+TO DO: pensar en un mejor nombre para el motor de preferencia un nombre de mujer, debidpo al nombre del motor, un nombre nórdico?
+
+
+Nota 2 (18/07/17): 
+
+Despues de una rápida revisión con Prince, entendí que lo mejor es generer una clase que contenga todas las funciones que utilizare y todas esas funciones
+sean templates.
+
+To Do: Leer más sobre templates.

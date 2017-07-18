@@ -33,6 +33,13 @@ namespace OE_SDK
 		//Esta clase servira como interfaz para hacer la llamada de las funciones
 		//especificas de las operaciones de las variables recibidas
 
+		template<typename T>
+		static T AddFunction::Add(const T& a, const T& b) 
+		{
+			T result = a + b;
+			return result;
+		}
+
 		/////////////////////////////////////Integers/////////////////////////////////
 		//Two Integers
 		void* IntegerAdd(int32 a, int32 b);
