@@ -1,6 +1,7 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
-
+#include "OETexture2D.h"
+#include <matrix4x4.h>
 
 namespace OE_SDK
 {
@@ -13,24 +14,11 @@ namespace OE_SDK
 		~C_GraphicsMaterial();
 
 
-//		Color m_Lambert;
-		int32 m_Irradescent;
-		int32 m_AO_Intensity;
+		C_Texture2D m_Normal;
+		C_Texture2D m_Albedo; 
 
-	//Texture
+		C_Matrix4 
 
-	protected: 
-
-		struct Color
-		{
-			int8 Red;
-			int8 Green;
-			int8 Blue;
-			int8 Alpha;
-
-		};
-
-		Color m_Color;
 	};
 
 }

@@ -1,10 +1,10 @@
 #pragma once
-#include "C_FunctionNode.h"
+#include "C_NodeUtileries.h"
 
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_VSP_API_UTILITY_EXPORT AddFunction : public C_FunctionNode  final
+	class ODIN_ENGINE_VSP_API_UTILITY_EXPORT AddFunction : public C_NodeUtileries  final
 	{
 		//public: cualquier puedo verlos
 		//protecte: mis hijos pueden verlas

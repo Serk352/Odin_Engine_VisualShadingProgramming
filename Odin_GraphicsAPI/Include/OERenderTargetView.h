@@ -1,8 +1,8 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
-#include "OEGraphicsDevice.h"
+#include "OEDevice.h"
 #include "OETexture2D.h"
-#include "OEGraphicsDeviceContext.h"
+#include "OEDeviceContext.h"
 
 namespace OE_SDK
 {

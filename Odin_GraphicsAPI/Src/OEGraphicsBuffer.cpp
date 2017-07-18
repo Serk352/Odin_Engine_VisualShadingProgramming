@@ -1,4 +1,4 @@
-#include "OEGraphicsBuffer.h"
+#include "OEGBuffer.h"
 #include <d3d11.h>
 
 namespace OE_SDK

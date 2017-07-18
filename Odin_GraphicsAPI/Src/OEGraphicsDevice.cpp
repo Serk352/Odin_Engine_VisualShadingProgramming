@@ -1,4 +1,4 @@
-#include "OEGraphicsDevice.h"
+#include "OEDevice.h"
 #	include "d3d11.h"
 
 

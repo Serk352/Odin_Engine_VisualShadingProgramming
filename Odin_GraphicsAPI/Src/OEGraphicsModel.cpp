@@ -1,4 +1,4 @@
-#include "OEGraphicsModel.h"
+#include "OEModel.h"
 //#include <assimp/Importer.hpp>
 #include <Importer.hpp>
 //#include <assimp/Scene.h>

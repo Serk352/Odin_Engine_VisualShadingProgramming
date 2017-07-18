@@ -27,15 +27,6 @@
     <ClCompile Include="src\MyApi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Externals\imgui.cpp">
-      <Filter>Source Files\Externals</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Externals\imgui_demo.cpp">
-      <Filter>Source Files\Externals</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Externals\imgui_draw.cpp">
-      <Filter>Source Files\Externals</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\MyApi.h">

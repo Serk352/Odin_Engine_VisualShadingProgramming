@@ -1,14 +1,14 @@
-#include "OEVertexAnimationBuffer.h"
+#include "OEAnimationVertexBuffer.h"
 #include <d3d11.h>
 
 namespace OE_SDK
 {
-	struct C_VertexAnimationBuffer::BufferData
+	struct C_AnimationVertexBuffer::BufferData
 	{
 		ID3D11Buffer* m_pObject;
 	};
 
-	void  C_VertexAnimationBuffer::Create(GraphicsDevice* prmDevice, int32 flags)
+	void  C_AnimationVertexBuffer::Create(GraphicsDevice* prmDevice, int32 flags)
 	{
 		UNREFERENCED_PARAMETER(flags);
 
@@ -36,7 +36,7 @@ namespace OE_SDK
 	}
 
 
-	void C_VertexAnimationBuffer::SetBuffer(GraphicsDeviceContext* prmDeviceContext, uint32 StarSlot)
+	void C_AnimationVertexBuffer::SetBuffer(GraphicsDeviceContext* prmDeviceContext, uint32 StarSlot)
 	{
 		uint32 pStrides = sizeof(VertexAnim);
 		uint32 pOffsets = 0;
@@ -46,13 +46,13 @@ namespace OE_SDK
 		pDeviceContext->IASetVertexBuffers(StarSlot, 1, &m_Buffer->m_pObject, &pStrides, &pOffsets);
 	}
 
-	void C_VertexAnimationBuffer::InsertVertex(VertexAnim prmVertex)
+	void C_AnimationVertexBuffer::InsertVertex(VertexAnim prmVertex)
 	{
 		m_VertexAnimVector.push_back(prmVertex);
 	}
 
 
-	void C_VertexAnimationBuffer::InsertVertexVector(const Vector<VertexAnim>& prmVertex)
+	void C_AnimationVertexBuffer::InsertVertexVector(const Vector<VertexAnim>& prmVertex)
 	{
 		for (uint32 i = 0; i < prmVertex.size() - 1; i++)
 		{
@@ -61,7 +61,7 @@ namespace OE_SDK
 	}
 
 
-	VertexAnim C_VertexAnimationBuffer::GetVertexAnim(uint32 ID)
+	VertexAnim C_AnimationVertexBuffer::GetVertexAnim(uint32 ID)
 	{
 		for (uint32 i = 0; i < m_VertexAnimVector.size(); i++)
 		{

@@ -5,15 +5,13 @@
 namespace OE_SDK
 {
 
-	MS_ALIGN(16) class ODIN_ENGINE_UTILITY_EXPORT C_Vector4f
+	class ODIN_ENGINE_UTILITY_EXPORT C_Vector4f
 	{
 	public:
-
 		float X_Axis;
 		float Y_Axis;
 		float Z_Axis;
 		float W_Axis;
-
 
 		//float PointProduct(const C_Vector4f&  vfA);
 		float operator|(const C_Vector4f& prmV);
@@ -26,7 +24,7 @@ namespace OE_SDK
 		C_Vector4f operator-(const C_Vector4f& prmV);
 
 		//Igualar a otro Vector 4
-		C_Vector4f operator=(const C_Vector4f& prmV);
+		C_Vector4f& operator=(const C_Vector4f& prmV);
 //		C_Vector4f VSubtraction(const C_Vector4f&  vfA);
 
 
@@ -51,6 +49,6 @@ namespace OE_SDK
 		C_Vector4f(const C_Vector4f& a);
 		~C_Vector4f();
 
-	}GCC_ALIGN(16);
+	};
 
 }

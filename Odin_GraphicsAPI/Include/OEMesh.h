@@ -3,8 +3,8 @@
 #include "OEVertex.h"
 #include "OEIndexBuffer.h"
 #include "OEVertexBuffer.h"
-//#include "OEVertexAnimationBuffer.h"
-#include "OEGraphicsDeviceContext.h"
+//#include "OEAnimationVertexBuffer.h"
+#include "OEDeviceContext.h"
 
 /*
 #if ODIN_ENGINE_PLATFORM == ODIN_ENGINE_PLATFORM_WIN32

@@ -3,10 +3,10 @@
 #include "OEGraphicsAPI.h"
 #include "OEPixelShader.h"
 #include "OEVertexShader.h"
-#include "OEGraphicsModel.h"
+#include "OEModel.h"
 #include "OEInputLayout.h"
 #include <DirectXMath.h>
-#include "OEGraphicsDevice.h"
+#include "OEDevice.h"
 #include "OEShaderResource.h"
 #include "OEFormats.h"
 #include "OEVertex.h"
@@ -15,7 +15,6 @@
 #include "OEDepthStencil.h"
 
 //////////////////////////////////////////////////////////////////////////
-#include "Externals/imgui.h"
 
 
 
@@ -119,7 +118,10 @@ namespace OE_SDK
 	
 		//////////////////////////////////////////////////////////////////////////
 		
-		m_DirectionalLight = C_Vector4f(-30.0f, 2.0f, 1.0f, 0.0f);
+//		m_DirectionalLight = C_Vector4f(-30.0f, 2.0f, 1.0f, 0.0f);
+
+
+		m_DirectionalLight = C_Vector4f(1.0f, 0.0f, 0.0f, 0.0f);
 		m_DirectionalLightBuffer.SetData(&m_DirectionalLight, sizeof(C_Vector4f));
 
 		
@@ -146,7 +148,12 @@ namespace OE_SDK
 
 	void MyApi::Render()
 	{
-		
+		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
+		ID3D11RenderTargetView* shaderResourceView = reinterpret_cast<ID3D11RenderTargetView*>(g_GraphicsAPI().GetRenderTargetViewObject());
+
+		C_Vector4f clearColor = { 0.0f, 0.0f, 1.0f, 1.0f };
+		pDeviceContext->ClearRenderTargetView(shaderResourceView, &clearColor.X_Axis);
+
 		g_GraphicsAPI().ClearDepthStencil();
 		 LayOut.Set();
 

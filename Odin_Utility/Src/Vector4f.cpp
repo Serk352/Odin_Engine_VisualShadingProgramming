@@ -81,9 +81,13 @@ namespace OE_SDK
 	}
 
 	//Iguala a otro vector
-	C_Vector4f C_Vector4f::operator=(const C_Vector4f& prmV)
+	C_Vector4f& C_Vector4f::operator=(const C_Vector4f& prmV)
 	{
-		return C_Vector4f(prmV);
+		this->X_Axis = prmV.X_Axis;
+		this->Y_Axis = prmV.Y_Axis;
+		this->Z_Axis = prmV.Z_Axis;
+		this->W_Axis = prmV.W_Axis;
+		return *this;
 	}
 
 	

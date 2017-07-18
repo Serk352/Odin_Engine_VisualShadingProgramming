@@ -11,7 +11,7 @@
 #include "OEVertex.h"
 #include "OEVertexAnimation.h"
 #include "OEGraphicsAPI.h"
-#include "OEVertexAnimationBuffer.h"
+#include "OEAnimationVertexBuffer.h"
 #include "OEAnimation.h"
 #include "OESkeleton.h"
 //#include "assimp/"

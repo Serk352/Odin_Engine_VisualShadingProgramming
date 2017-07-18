@@ -1,7 +1,7 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
-#include "OEGraphicsDevice.h"
-#include "OEGraphicsDeviceContext.h"
+#include "OEDevice.h"
+#include "OEDeviceContext.h"
 
 #if ODIN_ENGINE_PLATFORM == ODIN_ENGINE_PLATFORM_WIN32
 #	include <d3d11.h>

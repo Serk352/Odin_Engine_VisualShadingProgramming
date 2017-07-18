@@ -5,7 +5,7 @@
 #include "OEVertexShader.h"
 #include "OEPixelShader.h"
 #include "OEInputLayout.h"
-#include "OEGraphicsModel.h"
+#include "OEModel.h"
 
 
 namespace OE_SDK

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OEGraphicsMesh.h"
+#include "OEMesh.h"
 #include "OEAnimationMesh.h"
-#include "OEGraphicsDeviceContext.h"
+#include "OEDeviceContext.h"
 
 namespace OE_SDK
 {

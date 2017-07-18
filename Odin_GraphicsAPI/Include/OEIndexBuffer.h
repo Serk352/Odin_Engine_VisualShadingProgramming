@@ -1,7 +1,7 @@
 #pragma once
-//#include "OEGraphicsBuffer.h"
-#include "OEGraphicsDevice.h"
-#include "OEGraphicsDeviceContext.h"
+//#include "OEGBuffer.h"
+#include "OEDevice.h"
+#include "OEDeviceContext.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

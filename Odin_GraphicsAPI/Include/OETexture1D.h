@@ -1,5 +1,5 @@
 #pragma once
-#include "OEGraphicsTexture.h"
+#include "OETexture.h"
 
 namespace OE_SDK
 {

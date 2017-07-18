@@ -43,7 +43,7 @@ cbuffer LigthPos : register(b2)
     float4 LightP;
 }
 
-
+float4 Lightp : register(b2);
 SamplerState mySamplerColor : register(s0);
 SamplerState mySamplerNormal : register(s1);
 
@@ -84,16 +84,8 @@ PS_OUTPUT PS_MAIN(VS_OUTPUT Input)
 {
     PS_OUTPUT Output = (PS_OUTPUT)0;
 
-
-//     Output.Color = myTextureColor.Sample(mySamplerColor, Input.UV);
-    
-    //Output.Color = myTextureNormal.Sample(mySamplerNormal, Input.UV);
     float3 Light = normalize(LightP.xyz);
-   // Light.x=-30.0f;
-   // Light.y=2.0f;
-   // Light.z=1.0f;
-
-       float3 Normal = normalize(Input.Normal);
+    float3 Normal = normalize(Input.Normal);
 
     float3x3 TBN;
     TBN[0] = normalize(Input.Tangent);
@@ -115,8 +107,15 @@ PS_OUTPUT PS_MAIN(VS_OUTPUT Input)
     
     //Color = float4(1.0f, 0.0f, 0.0f, 1.0f);
 
-    Output.Color = Color * incidence;
 
+    float4 NBeta = myTextureNormal.Sample(mySamplerNormal, Input.UV);
+   // Output.Color = Color * incidence;
+
+   float3 LPos = float3(0.5f,0.2f, 0.0f);
+    
+    float a = dot(LightP.xyz, Input.Normal);
+
+    Output.Color = NBeta; //float4(1.0f,0.0f,0.0f,0.0f) * a;
 
     return Output;
 }

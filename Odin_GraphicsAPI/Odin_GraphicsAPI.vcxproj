@@ -219,14 +219,14 @@
     <ClInclude Include="Include\OEDomainShader.h" />
     <ClInclude Include="Include\OEFormats.h" />
     <ClInclude Include="Include\OEGraphicsAPI.h" />
-    <ClInclude Include="Include\OEGraphicsBuffer.h" />
-    <ClInclude Include="Include\OEGraphicsDevice.h" />
-    <ClInclude Include="Include\OEGraphicsDeviceContext.h" />
-    <ClInclude Include="Include\OEGraphicsMaterial.h" />
-    <ClInclude Include="Include\OEGraphicsMesh.h" />
-    <ClInclude Include="Include\OEGraphicsModel.h" />
-    <ClInclude Include="Include\OEGraphicsShaders.h" />
-    <ClInclude Include="Include\OEGraphicsTexture.h" />
+    <ClInclude Include="Include\OEGBuffer.h" />
+    <ClInclude Include="Include\OEDevice.h" />
+    <ClInclude Include="Include\OEDeviceContext.h" />
+    <ClInclude Include="Include\OEMaterial.h" />
+    <ClInclude Include="Include\OEMesh.h" />
+    <ClInclude Include="Include\OEModel.h" />
+    <ClInclude Include="Include\OEShaders.h" />
+    <ClInclude Include="Include\OETexture.h" />
     <ClInclude Include="Include\OEHullShader.h" />
     <ClInclude Include="Include\OEIndexBuffer.h" />
     <ClInclude Include="Include\OEInputLayout.h" />
@@ -242,7 +242,7 @@
     <ClInclude Include="Include\OETexture2D.h" />
     <ClInclude Include="Include\OEVertex.h" />
     <ClInclude Include="Include\OEVertexAnimation.h" />
-    <ClInclude Include="Include\OEVertexAnimationBuffer.h" />
+    <ClInclude Include="Include\OEAnimationVertexBuffer.h" />
     <ClInclude Include="Include\OEVertexBuffer.h" />
     <ClInclude Include="Include\OEVertexShader.h" />
   </ItemGroup>

@@ -56,30 +56,6 @@
     <ClInclude Include="Include\OEGraphicsAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\OEGraphicsBuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\OEGraphicsDevice.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\OEGraphicsDeviceContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\OEGraphicsMaterial.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\OEGraphicsMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\OEGraphicsModel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\OEGraphicsShaders.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\OEGraphicsTexture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\OEHullShader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -122,9 +98,6 @@
     <ClInclude Include="Include\OEVertexAnimation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\OEVertexAnimationBuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\OEVertexBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -132,6 +105,33 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Include\OERenderTargetView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OEGBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OEDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OEDeviceContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OEMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OEMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OEModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OEShaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OETexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\OEAnimationVertexBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

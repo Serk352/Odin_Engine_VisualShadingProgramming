@@ -1,19 +1,19 @@
 #pragma once
-//#include "OEGraphicsBuffer.h"
-#include "OEGraphicsDevice.h"
-#include "OEGraphicsDeviceContext.h"
+//#include "OEGBuffer.h"
+#include "OEDevice.h"
+#include "OEDeviceContext.h"
 #include "OEVertexAnimation.h"
 
 
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_VertexAnimationBuffer //: public C_GraphicsBuffer
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_AnimationVertexBuffer //: public C_GraphicsBuffer
 	{
 
 	public:
-		C_VertexAnimationBuffer() {};
-		virtual ~C_VertexAnimationBuffer() {};
+		C_AnimationVertexBuffer() {};
+		virtual ~C_AnimationVertexBuffer() {};
 
 
 		virtual	void Create(GraphicsDevice* prmDevice, int32 flags);

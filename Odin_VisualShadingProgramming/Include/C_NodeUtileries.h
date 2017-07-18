@@ -4,11 +4,11 @@
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_VSP_API_UTILITY_EXPORT C_FunctionNode : public C_Node
+	class ODIN_ENGINE_VSP_API_UTILITY_EXPORT C_NodeUtileries : public C_Node
 	{
 	public:
-		C_FunctionNode() {};
-		virtual ~C_FunctionNode();
+		C_NodeUtileries() {};
+		virtual ~C_NodeUtileries();
 
 		//virtual void GetValue(int prmNumOfParameters, sInputandOutput prmVariables[]) = 0;
 		//Necesito saber el numero de parametros para saber si el tamaño del vector concuerda con esta

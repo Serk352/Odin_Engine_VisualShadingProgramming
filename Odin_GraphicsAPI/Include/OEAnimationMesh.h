@@ -2,8 +2,8 @@
 #include "OEPrerequisitesGraphics.h"
 #include "OEVertexAnimation.h"
 #include "OEIndexBuffer.h"
-#include "OEVertexAnimationBuffer.h"
-#include "OEGraphicsDeviceContext.h"
+#include "OEAnimationVertexBuffer.h"
+#include "OEDeviceContext.h"
 
 
 namespace OE_SDK
@@ -26,7 +26,7 @@ namespace OE_SDK
 		SIZE_T m_Size;
 
 
-		C_VertexAnimationBuffer m_VertexAnimationBuffer;
+		C_AnimationVertexBuffer m_VertexAnimationBuffer;
 		C_IndexBuffer32 m_IndexBuffer;
 
 	};

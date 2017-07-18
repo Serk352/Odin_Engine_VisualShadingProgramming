@@ -1,7 +1,7 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
-#include "OEGraphicsMesh.h"
-#include "OEGraphicsDeviceContext.h"
+#include "OEMesh.h"
+#include "OEDeviceContext.h"
 
 namespace OE_SDK
 {

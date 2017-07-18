@@ -189,7 +189,7 @@
   <ItemGroup>
     <ClInclude Include="Include\AddFunction.h" />
     <ClInclude Include="Include\C_Color.h" />
-    <ClInclude Include="Include\C_FunctionNode.h" />
+    <ClInclude Include="Include\C_NodeUtileries.h" />
     <ClInclude Include="Include\C_Node.h" />
     <ClInclude Include="Include\OdinVPSDefines.h" />
     <ClInclude Include="Include\PrerequisitesVSP.h" />

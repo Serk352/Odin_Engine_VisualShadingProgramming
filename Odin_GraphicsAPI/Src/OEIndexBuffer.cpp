@@ -22,7 +22,6 @@ namespace OE_SDK
 	C_IndexBufferTemplate<T>::~C_IndexBufferTemplate()
 	{
 		SAFE_DELETE(m_Buffer);
-		__debugbreak();
 	}
 
 	template<typename T>

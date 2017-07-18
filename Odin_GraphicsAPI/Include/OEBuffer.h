@@ -1,7 +1,7 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
-#include "OEGraphicsDevice.h"
-#include "OEGraphicsDeviceContext.h"
+#include "OEDevice.h"
+#include "OEDeviceContext.h"
 #include "OEFormats.h"
 
 

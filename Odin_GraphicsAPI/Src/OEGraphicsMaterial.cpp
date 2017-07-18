@@ -1,4 +1,4 @@
-#include "OEGraphicsMaterial.h"
+#include "OEMaterial.h"
 
 namespace OE_SDK
 {

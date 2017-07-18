@@ -1,7 +1,7 @@
 #include "OEGraphicsAPI.h"
 
-#include "OEGraphicsDevice.h"
-#include "OEGraphicsDeviceContext.h"
+#include "OEDevice.h"
+#include "OEDeviceContext.h"
 #include "OESwapChain.h"
 
 #include "Matrix3.h"

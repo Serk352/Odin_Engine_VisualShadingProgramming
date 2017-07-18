@@ -29,3 +29,9 @@ Despues de una rápida revisión con Prince, entendí que lo mejor es generer una c
 sean templates.
 
 To Do: Leer más sobre templates.
+
+Nota 3 (18/07/17):
+
+Cada modelo esta compuesto de varios meshes, por ende cada mesh necesita su propio material, el material consta de las texturas necesarias, las variables 
+y matrices necesaras y el shader necesario, es un shader por cada mesh.
+

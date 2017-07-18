@@ -1,6 +1,6 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
-#include "OEGraphicsShaders.h"
+#include "OEShaders.h"
 
 #if ODIN_ENGINE_PLATFORM == ODIN_ENGINE_PLATFORM_WIN32
 #	include <d3d11.h>

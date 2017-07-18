@@ -1,7 +1,8 @@
 #pragma once
 
 #include "OEPrerequisitesGraphics.h"
-#include "OEGraphicsShaders.h"
+#include "OEShaders.h"
+
 
 namespace OE_SDK
 {
