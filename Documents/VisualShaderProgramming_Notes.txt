@@ -35,3 +35,17 @@ Nota 3 (18/07/17):
 Cada modelo esta compuesto de varios meshes, por ende cada mesh necesita su propio material, el material consta de las texturas necesarias, las variables 
 y matrices necesaras y el shader necesario, es un shader por cada mesh.
 
+
+
+Nota 4(18/07/17):
+
+Todos los objetos en el área de juego son Actores y lo que contienen los actores son componentes.
+Los componentes son recursos.
+
+*Actores, componentes
+
+Cualquier cosa que biene de un archivo es un recuros:
+solo debo tener una copia de cada recurso, y das insntancias
+
+
+TO DO: Generar un manager de recursos, Genarar sistema de actores.

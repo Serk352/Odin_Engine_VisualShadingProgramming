@@ -2,6 +2,9 @@
 #include "OEPrerequisitesGraphics.h"
 #include "OETexture2D.h"
 #include <Matrix4.h>
+#include "OEPixelShader.h"
+#include "OEVertexShader.h"
+
 
 namespace OE_SDK
 {
@@ -30,7 +33,10 @@ namespace OE_SDK
 		void Init();
 		void Update();
  
+	protected:
+		//aqui van los shaders
 
+		C_VertexShader
 	};
 
 }
