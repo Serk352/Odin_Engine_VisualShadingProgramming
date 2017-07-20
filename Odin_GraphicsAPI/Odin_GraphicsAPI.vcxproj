@@ -261,6 +261,7 @@
     <ClCompile Include="Src\OEMaterial.cpp" />
     <ClCompile Include="Src\OEMesh.cpp" />
     <ClCompile Include="Src\OEModel.cpp" />
+    <ClCompile Include="Src\OEResourcesManager.cpp" />
     <ClCompile Include="Src\OEShaders.cpp" />
     <ClCompile Include="Src\OETexture.cpp" />
     <ClCompile Include="Src\OEHullShader.cpp" />
