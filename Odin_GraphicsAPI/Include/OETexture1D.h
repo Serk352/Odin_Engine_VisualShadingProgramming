@@ -3,12 +3,12 @@
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_Texture1D : public C_GraphicsTexture
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OETexture1D : public OEGraphicsTexture
 	{
 	public:
 
-		C_Texture1D();
-		virtual ~C_Texture1D();
+		OETexture1D();
+		virtual ~OETexture1D();
 
 		virtual void LoadFromFile(const char* FileName);
 		virtual void CreateEmpty();

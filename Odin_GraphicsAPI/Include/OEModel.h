@@ -5,11 +5,11 @@
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_GraphicsModel
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsModel
 	{
 		public:
-			C_GraphicsModel();
-			~C_GraphicsModel();
+			OEGraphicsModel();
+			~OEGraphicsModel();
 
 			//TODO: Crear estandar de métodos
 			//TODO: Crear clase material
@@ -19,7 +19,7 @@ namespace OE_SDK
 			void Render();
 			void Release();
 
-			Vector<C_GraphicsMesh*> m_Meshes;
+			Vector<OEGraphicsMesh*> m_Meshes;
 
 	};
 

@@ -11,11 +11,11 @@
 //<> se llaman corchetes angulares
 namespace OE_SDK
 {
-	C_GraphicsModel::C_GraphicsModel()
+	OEGraphicsModel::OEGraphicsModel()
 	{
 
 	}
-	C_GraphicsModel::~C_GraphicsModel()
+	OEGraphicsModel::~OEGraphicsModel()
 	{
 
 	}
@@ -23,12 +23,12 @@ namespace OE_SDK
 	//Si voy acrear un nuevo objeto es un Device
 	//Si vas a modificar un objeto existente es un DeviceContext
 
-	void C_GraphicsModel::Init()
+	void OEGraphicsModel::Init()
 	{
 
 	}
 
-	bool C_GraphicsModel::LoadFromFile(const char * strFileName)
+	bool OEGraphicsModel::LoadFromFile(const char * strFileName)
 	{
 		//ID3D11Device* pDevice = reinterpret_cast<ID3D11Device*>(prmDevice->GetObj());
 		Assimp::Importer myImporter;
@@ -55,9 +55,9 @@ namespace OE_SDK
 				//Guardo el mesh que esta en el espacio actual del arreglo de meshes de la escena, y lo guardo en un mesh temporal
 				aiMesh* pMesh = myScene->mMeshes[i];
 				//Ahora el mesh temporal lo inserto en mi vector de meshes
-				m_Meshes.push_back(new C_GraphicsMesh());
+				m_Meshes.push_back(new OEGraphicsMesh());
 				//igualo un mesh temporal al mesh de mi vector de meshes del espacio actul
-				C_GraphicsMesh& TempMesh = *m_Meshes[i];
+				OEGraphicsMesh& TempMesh = *m_Meshes[i];
 				
 
 				//Utilizo un Vertíce Temporal
@@ -181,7 +181,7 @@ namespace OE_SDK
 
 
 
-	void C_GraphicsModel::Render()
+	void OEGraphicsModel::Render()
 	{
 
 
@@ -192,7 +192,7 @@ namespace OE_SDK
 
 	}
 
-	void C_GraphicsModel::Release()
+	void OEGraphicsModel::Release()
 	{
 	}
 

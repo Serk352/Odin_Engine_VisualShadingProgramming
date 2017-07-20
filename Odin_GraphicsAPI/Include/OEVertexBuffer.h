@@ -4,11 +4,11 @@
 namespace OE_SDK
 {
 	//template<typename T>
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_VertexBuffer //: public C_GraphicsBuffer
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEVertexBuffer //: public C_GraphicsBuffer
 	{
 	public:
-		C_VertexBuffer();
-		~C_VertexBuffer();
+		OEVertexBuffer();
+		~OEVertexBuffer();
 
 		
 		virtual	void Create(int32 flags);

@@ -10,13 +10,13 @@ namespace OE_SDK
 
 
 
-	C_Skeleton::C_Skeleton()
+	OESkeleton::OESkeleton()
 	{
 
 	}
 
 
-	C_Skeleton::~C_Skeleton()
+	OESkeleton::~OESkeleton()
 	{
 
 

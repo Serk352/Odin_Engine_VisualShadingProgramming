@@ -6,12 +6,12 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_HullShader : public C_GraphicsShaders
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEHullShader : public OEGraphicsShaders
 	{
 	public:
 
-		C_HullShader();
-		virtual ~C_HullShader();
+		OEHullShader();
+		virtual ~OEHullShader();
 
 	
 		void Create(const String FileName, const String EntryPoint);

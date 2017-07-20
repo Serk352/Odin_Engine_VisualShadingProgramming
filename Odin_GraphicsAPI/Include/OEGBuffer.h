@@ -32,8 +32,8 @@ namespace OE_SDK
 
 		BufferData* m_BufferData;
 	
-		virtual	void Create(const GraphicsDevice* pDevice, int32 flags)=0;
-		virtual	void SetBuffer(const GraphicsDeviceContext* pDeviceContext, uint32 StarSlot=0)=0;
+		virtual	void Create(const OEGraphicsDevice* pDevice, int32 flags)=0;
+		virtual	void SetBuffer(const OEGraphicsDeviceContext* pDeviceContext, uint32 StarSlot=0)=0;
 		virtual	void Release();
 	};
 

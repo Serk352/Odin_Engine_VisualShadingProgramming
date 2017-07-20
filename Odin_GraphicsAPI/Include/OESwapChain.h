@@ -4,11 +4,11 @@
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_SwapChain
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OESwapChain
 	{
 	public:
-		 C_SwapChain();
-		~C_SwapChain();
+		 OESwapChain();
+		~OESwapChain();
 
 		void Create(void* scrHandle, uint32 width, uint32 height);
 		void* GetBuffer();

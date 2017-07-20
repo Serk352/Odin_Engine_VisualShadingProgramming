@@ -7,12 +7,12 @@ namespace OE_SDK
 
 
 	
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_Texture2D
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OETexture2D
 	{
 
 	public:
-		C_Texture2D();
-		~C_Texture2D();
+		OETexture2D();
+		~OETexture2D();
 	
 	
 		

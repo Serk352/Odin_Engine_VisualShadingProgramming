@@ -17,7 +17,7 @@ namespace OE_SDK
 // 	}
 
 
-	void C_ConstantBuffer::Create(GraphicsDevice* prmDevice, int32 flags)
+	void OEConstantBuffer::Create(OEGraphicsDevice* prmDevice, int32 flags)
 	{
 
 		UNREFERENCED_PARAMETER(flags);
@@ -46,7 +46,7 @@ namespace OE_SDK
 
 
 
-	void C_ConstantBuffer::SetBuffer(GraphicsDeviceContext* prmDeviceContext, uint32 StarSlot /* = 0 */)
+	void OEConstantBuffer::SetBuffer(OEGraphicsDeviceContext* prmDeviceContext, uint32 StarSlot /* = 0 */)
 	{
 		UNREFERENCED_PARAMETER(StarSlot);
 		UNREFERENCED_PARAMETER(prmDeviceContext);

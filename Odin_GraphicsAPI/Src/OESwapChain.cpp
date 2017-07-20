@@ -6,24 +6,24 @@
 namespace OE_SDK
 {
 
-	struct C_SwapChain::SwapChainData
+	struct OESwapChain::SwapChainData
 	{
 		IDXGISwapChain* m_pObject;
 	};
 
-	C_SwapChain::C_SwapChain()
+	OESwapChain::OESwapChain()
 	{
 		m_SwapChain = new SwapChainData;
 		m_SwapChain->m_pObject = nullptr;
 	}
 
-	C_SwapChain::~C_SwapChain()
+	OESwapChain::~OESwapChain()
 	{
 		delete m_SwapChain;
 	}
 
 
-	void C_SwapChain::Create(void* scrHandle, uint32 width, uint32 height)
+	void OESwapChain::Create(void* scrHandle, uint32 width, uint32 height)
 	{
 		DXGI_MODE_DESC bufferDesc;
 
@@ -66,7 +66,7 @@ namespace OE_SDK
 	}
 
 
-	void* C_SwapChain::GetBuffer()
+	void* OESwapChain::GetBuffer()
 	{
 		ID3D11Texture2D* pBackBuffer = nullptr;
 		m_SwapChain->m_pObject->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
@@ -74,16 +74,16 @@ namespace OE_SDK
 		return reinterpret_cast<void*>(pBackBuffer);
 	}
 
-	void C_SwapChain::Present()
+	void OESwapChain::Present()
 	{
 		m_SwapChain->m_pObject->Present(0, 0);
 	}
 
-	void*  C_SwapChain::GetObj()
+	void*  OESwapChain::GetObj()
 	{
 		return reinterpret_cast<void*>(m_SwapChain->m_pObject);
 	}
-	void** C_SwapChain::GetReference()
+	void** OESwapChain::GetReference()
 	{
 		return reinterpret_cast<void**>(&m_SwapChain->m_pObject);
 	}

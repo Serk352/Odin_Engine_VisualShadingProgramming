@@ -9,14 +9,14 @@ namespace OE_SDK
 {
 
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_ShaderResource
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEShaderResource
 	{	
 
 	public:
-		C_ShaderResource();
-		virtual ~C_ShaderResource();
+		OEShaderResource();
+		virtual ~OEShaderResource();
 
-		void Create(C_Texture2D Resource, 
+		void Create(OETexture2D Resource, 
 					int MipLevels, 
 					int MDMipMap);
 

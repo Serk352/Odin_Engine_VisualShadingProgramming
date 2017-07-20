@@ -11,11 +11,11 @@ namespace OE_SDK
 {
 
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_ConstantBuffer
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEConstantBuffer
 	{
 
-		virtual	void Create(GraphicsDevice* prmDevice, int32 flags);
-		virtual	void SetBuffer(GraphicsDeviceContext* prmDeviceContext, uint32 StarSlot = 0);
+		virtual	void Create(OEGraphicsDevice* prmDevice, int32 flags);
+		virtual	void SetBuffer(OEGraphicsDeviceContext* prmDeviceContext, uint32 StarSlot = 0);
 
 		struct Vista
 		{

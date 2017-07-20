@@ -7,21 +7,21 @@
 namespace OE_SDK
 {
 	//Define el modelo de shaders con el que se compilaran todos los VS
-	const char* C_VertexShader::VS_SM = "vs_5_0";
+	const char* OEVertexShader::VS_SM = "vs_5_0";
 
 
-	C_VertexShader::C_VertexShader()
+	OEVertexShader::OEVertexShader()
 	{
 	}
 
 
-	C_VertexShader::~C_VertexShader()
+	OEVertexShader::~OEVertexShader()
 	{
 	}
 
 
 
-	void C_VertexShader::Create(const String FileName, const String EntryPoint)
+	void OEVertexShader::Create(const String FileName, const String EntryPoint)
 	{
 		WString Temp = WString(FileName.begin(), FileName.end());
 		LPCWSTR File  = LPCWSTR( Temp.c_str());
@@ -34,7 +34,7 @@ namespace OE_SDK
 			std::string s = (char*)m_ShaderData->pErrors->GetBufferPointer();
 		}
 	
-		C_GraphicsAPI* pGraphicsAPI = C_GraphicsAPI::instancePtr();
+		OEGraphicsAPI* pGraphicsAPI = OEGraphicsAPI::instancePtr();
 
 		ID3D11Device* pDevice = reinterpret_cast<ID3D11Device*>(pGraphicsAPI->GetDevice());
 		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(pGraphicsAPI->GetDeviceContext());

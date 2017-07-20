@@ -7,16 +7,16 @@
 namespace OE_SDK
 {
 
-	class C_RenderTargetView
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OERenderTargetView
 	{
 	public:
 
-		C_RenderTargetView();
-		~C_RenderTargetView();
+		OERenderTargetView();
+		~OERenderTargetView();
 
 
 		
-		void Create(const C_Texture2D& prmTexture);
+		void Create(const OETexture2D& prmTexture);
 		
 		void* GetObj();
 		void** GetReference();

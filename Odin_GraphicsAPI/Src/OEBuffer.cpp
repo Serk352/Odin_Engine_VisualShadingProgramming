@@ -6,24 +6,24 @@
 namespace OE_SDK
 {
 
-	struct C_Buffer::BufferData
+	struct OEBuffer::BufferData
 	{
 		ID3D11Buffer* pObject;
 	};
 
 
-	C_Buffer::C_Buffer()
+	OEBuffer::OEBuffer()
 	{
 		m_Buffer = new BufferData;
 		m_Buffer->pObject = nullptr;
 	}
 
-	C_Buffer::~C_Buffer()
+	OEBuffer::~OEBuffer()
 	{
 		SAFE_DELETE(m_Buffer);
 	}
 
-	void C_Buffer::Create(void* prmData, SIZE_T ByteSize)
+	void OEBuffer::Create(void* prmData, SIZE_T ByteSize)
 	{
 		D3D11_BUFFER_DESC BufDesc;
 		ZeroMemory(&BufDesc, sizeof(D3D11_BUFFER_DESC));
@@ -50,7 +50,7 @@ namespace OE_SDK
 	}
 
 
-	void C_Buffer::SetData(const void* pData, uint32 ByteSize)
+	void OEBuffer::SetData(const void* pData, uint32 ByteSize)
 	{
 		ID3D11DeviceContext* pDeviceContext = 
 			reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
@@ -63,14 +63,14 @@ namespace OE_SDK
 										  0);
 	}
 
-	void C_Buffer::SetForPixelSahder(unsigned int StartSlot)
+	void OEBuffer::SetForPixelSahder(unsigned int StartSlot)
 	{
 		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
 
 		pDeviceContext->PSSetConstantBuffers(StartSlot, 1, &m_Buffer->pObject);
 	}
 
-	void C_Buffer::SetForVertexShader(unsigned int StartSlot)
+	void OEBuffer::SetForVertexShader(unsigned int StartSlot)
 	{
 		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
 
@@ -79,12 +79,12 @@ namespace OE_SDK
 
 
 	
-	void* C_Buffer::GetObj()
+	void* OEBuffer::GetObj()
 	{
 		return reinterpret_cast<void*> (m_Buffer->pObject);
 	}
 
-	void** C_Buffer::GetReference()
+	void** OEBuffer::GetReference()
 	{
 		return reinterpret_cast<void**> (&m_Buffer->pObject);
 	}

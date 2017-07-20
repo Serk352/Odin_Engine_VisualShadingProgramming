@@ -26,12 +26,12 @@ namespace OE_SDK
 	};
 
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_Skeleton
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OESkeleton
 	{
 	public:
 		
-		C_Skeleton();
-		~C_Skeleton();
+		OESkeleton();
+		~OESkeleton();
 
 		int32 m_NumBones;
 		

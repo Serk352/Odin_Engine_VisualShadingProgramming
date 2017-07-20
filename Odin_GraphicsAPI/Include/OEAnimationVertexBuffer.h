@@ -8,17 +8,17 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_AnimationVertexBuffer //: public C_GraphicsBuffer
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEAnimationVertexBuffer //: public C_GraphicsBuffer
 	{
 
 	public:
-		C_AnimationVertexBuffer() {};
-		virtual ~C_AnimationVertexBuffer() {};
+		OEAnimationVertexBuffer() {};
+		virtual ~OEAnimationVertexBuffer() {};
 
 
-		virtual	void Create(GraphicsDevice* prmDevice, int32 flags);
+		virtual	void Create(OEGraphicsDevice* prmDevice, int32 flags);
 							   
-		virtual	void SetBuffer(GraphicsDeviceContext* prmDeviceContext, uint32 StarSlot = 0);
+		virtual	void SetBuffer(OEGraphicsDeviceContext* prmDeviceContext, uint32 StarSlot = 0);
 
 		void InsertVertex(VertexAnim prmVertex);
 		void InsertVertexVector(const Vector<VertexAnim>& prmVertex);

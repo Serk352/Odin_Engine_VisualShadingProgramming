@@ -9,18 +9,18 @@
 namespace OE_SDK
 {
 
-	struct C_Texture2D::TextureData
+	struct OETexture2D::TextureData
 	{
 		ID3D11Texture2D* myTexture;
 	};
 
-	C_Texture2D::C_Texture2D()
+	OETexture2D::OETexture2D()
 	{
 		m_Texture = new TextureData;
 		m_Texture->myTexture = nullptr;
 	}
 
-	C_Texture2D::~C_Texture2D()
+	OETexture2D::~OETexture2D()
 	{
 		SAFE_RELEASE(m_Texture->myTexture);
 		SAFE_DELETE(m_Texture);
@@ -29,7 +29,7 @@ namespace OE_SDK
 
 	
 
-	void C_Texture2D::Create(int Width, 
+	void OETexture2D::Create(int Width, 
 								int Height, 
 								bool isWritrable, 
 								nFormats::eFormat myFormat,
@@ -69,7 +69,7 @@ namespace OE_SDK
 
 
 
-	void C_Texture2D::LoadFromFile(char* FileName, 
+	void OETexture2D::LoadFromFile(char* FileName, 
 								   bool isWritable, 
 								   int DesireNumChannels, 
 								   nFormats::eFormat myFormat,
@@ -128,12 +128,12 @@ namespace OE_SDK
 		stbi_image_free(MyImage);
 	}
 
-	void* C_Texture2D::GetObj()
+	void* OETexture2D::GetObj()
 	{
 		return reinterpret_cast<void*> (m_Texture->myTexture);
 	}
 
-	void** C_Texture2D::GetReference()
+	void** OETexture2D::GetReference()
 	{
 		return reinterpret_cast<void**> (&m_Texture->myTexture);
 	}

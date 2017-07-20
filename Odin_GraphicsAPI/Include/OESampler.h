@@ -6,11 +6,11 @@
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_Sampler
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OESampler
 	{
 	public:
-		C_Sampler();
-		~C_Sampler();
+		OESampler();
+		~OESampler();
 
 		
 		void CreateSamplerState(nSamplingFilters::eSamplingFilter prmFilter,

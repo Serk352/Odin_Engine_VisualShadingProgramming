@@ -34,24 +34,24 @@ namespace OE_SDK
 		C_Camera myCam;
 		
 		//Shaders
-		C_PixelShader m_PShader;
-		C_VertexShader m_VShader;
+		OEPixelShader m_PShader;
+		OEVertexShader m_VShader;
 		
 		//Input Layout
-		C_InputLayout LayOut;
+		OEInputLayout LayOut;
 
 		//Texturas
-		C_Texture2D m_Color;
-		C_Texture2D m_Normal;
+		OETexture2D m_Color;
+		OETexture2D m_Normal;
 
 		//Samplers
-		C_Sampler m_SamplerColor;
-		C_Sampler m_NormalSampler;
+		OESampler m_SamplerColor;
+		OESampler m_NormalSampler;
 
 
-		C_Buffer m_DirectionalLightBuffer;
-		C_Buffer m_ViewMatrixBuffer;
-		C_Buffer m_ProjMatrixBuffer;
+		OEBuffer m_DirectionalLightBuffer;
+		OEBuffer m_ViewMatrixBuffer;
+		OEBuffer m_ProjMatrixBuffer;
 	
 		//MAtrix
 		C_Matrix4  m_ViewMatrix;
@@ -62,9 +62,9 @@ namespace OE_SDK
 
 
 		//3D Model
-		C_GraphicsModel myModel;
+		OEGraphicsModel myModel;
 
-		C_VertexBuffer m_GuiVertexBuffer;
+		OEVertexBuffer m_GuiVertexBuffer;
 		C_IndexBuffer32 m_GuiIndexBuffer;
 
 

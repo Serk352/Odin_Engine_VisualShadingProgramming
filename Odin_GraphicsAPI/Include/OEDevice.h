@@ -4,12 +4,12 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT GraphicsDevice
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsDevice
 	{
 	public:
 
-		GraphicsDevice();
-		~GraphicsDevice();
+		OEGraphicsDevice();
+		~OEGraphicsDevice();
 
 
 		void* GetObj();

@@ -6,31 +6,31 @@
 namespace OE_SDK
 {
 
-	struct GraphicsDevice::DeviceData
+	struct OEGraphicsDevice::DeviceData
 	{
 		ID3D11Device* pObject;
 	};
 
 
-	GraphicsDevice::GraphicsDevice()
+	OEGraphicsDevice::OEGraphicsDevice()
 	{
 		m_Device = new DeviceData;
 		m_Device->pObject = nullptr;
 	}
 
-	GraphicsDevice::~GraphicsDevice()
+	OEGraphicsDevice::~OEGraphicsDevice()
 	{
 		SAFE_DELETE(m_Device);
 	}
 
 
 	
-	void* GraphicsDevice::GetObj()
+	void* OEGraphicsDevice::GetObj()
 	{
 		return reinterpret_cast<void*>(m_Device->pObject);
 	}
 
-	void** GraphicsDevice::GetReference()
+	void** OEGraphicsDevice::GetReference()
 	{
 		return reinterpret_cast<void**>(&m_Device->pObject);
 	}

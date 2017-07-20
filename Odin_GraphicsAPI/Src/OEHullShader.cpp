@@ -6,21 +6,21 @@
 
 namespace OE_SDK
 {
-	const char* C_HullShader::HS_SM = "hs_5_0";
+	const char* OEHullShader::HS_SM = "hs_5_0";
 
-	C_HullShader::C_HullShader()
+	OEHullShader::OEHullShader()
 	{
 		m_ShaderData = new(ShaderData);
 	}
 
-	C_HullShader::~C_HullShader()
+	OEHullShader::~OEHullShader()
 	{
 
 	}
 
 
 
-	void C_HullShader::Create(const String FileName, const String EntryPoint)
+	void OEHullShader::Create(const String FileName, const String EntryPoint)
 	{
 		WString Temp =  WString(FileName.begin(), FileName.end());
 		LPCWSTR File = LPCWSTR(Temp.c_str());

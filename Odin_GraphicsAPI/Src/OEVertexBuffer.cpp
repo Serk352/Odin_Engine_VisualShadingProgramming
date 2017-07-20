@@ -5,25 +5,25 @@
 namespace OE_SDK
 {
 
-	struct C_VertexBuffer::BufferData
+	struct OEVertexBuffer::BufferData
 	{
 		ID3D11Buffer* m_pObject;
 	};
 
-	C_VertexBuffer::C_VertexBuffer()
+	OEVertexBuffer::OEVertexBuffer()
 	{
 		m_buffer = new BufferData;
 		m_buffer->m_pObject = nullptr;
 	}
 
-	C_VertexBuffer::~C_VertexBuffer()
+	OEVertexBuffer::~OEVertexBuffer()
 	{
 		SAFE_RELEASE(m_buffer->m_pObject);
 		delete m_buffer;
 	}
 
 	//template<typename T>
-	void C_VertexBuffer::Create(int32)
+	void OEVertexBuffer::Create(int32)
 	{
 		D3D11_SUBRESOURCE_DATA resourceData;
 		memset(&resourceData, 0, sizeof(D3D11_SUBRESOURCE_DATA));
@@ -52,7 +52,7 @@ namespace OE_SDK
 	}
 
 	//template<typename T>
-	void C_VertexBuffer::SetBuffer(uint32 StarSlot)// const GraphicsDevice* pDevice, const GraphicsDeviceContext* pDeviceContext)
+	void OEVertexBuffer::SetBuffer(uint32 StarSlot)// const GraphicsDevice* pDevice, const GraphicsDeviceContext* pDeviceContext)
 	{	
 		ID3D11DeviceContext* pDContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
 		uint32 pStrides = sizeof(Vertex);
@@ -61,12 +61,12 @@ namespace OE_SDK
 	}
 
 	//template<typename T>
-	void C_VertexBuffer::InsertVertex(Vertex prmVertex)
+	void OEVertexBuffer::InsertVertex(Vertex prmVertex)
 	{
 		m_VertexVector.push_back(prmVertex);
 	}
 	//template<typename T>
-	void C_VertexBuffer::InsertVertexVector(const Vector<Vertex>& prmVertex)
+	void OEVertexBuffer::InsertVertexVector(const Vector<Vertex>& prmVertex)
 	{
 		for (uint32 i = 0; i < prmVertex.size() - 1; i++)
 		{

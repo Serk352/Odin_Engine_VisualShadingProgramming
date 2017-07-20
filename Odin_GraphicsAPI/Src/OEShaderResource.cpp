@@ -6,20 +6,20 @@
 namespace OE_SDK
 {
 
-	struct C_ShaderResource::ResourceData
+	struct OEShaderResource::ResourceData
 	{
 		ID3D11ShaderResourceView* m_pObject;
 	};
 
 
-	C_ShaderResource::C_ShaderResource()
+	OEShaderResource::OEShaderResource()
 	{
 		m_Resource = new ResourceData;
 		m_Resource->m_pObject = nullptr;
 	}
 
 
-	C_ShaderResource::~C_ShaderResource()
+	OEShaderResource::~OEShaderResource()
 	{
 		delete m_Resource;
 	}
@@ -27,7 +27,7 @@ namespace OE_SDK
 	
 
 
-	void C_ShaderResource::Create(C_Texture2D Resource,
+	void OEShaderResource::Create(OETexture2D Resource,
 								  int MipLevels, 
 								  int MDMipMap)
 	{
@@ -50,7 +50,7 @@ namespace OE_SDK
 	}
 
 
-	void C_ShaderResource::SetForPixelShader(unsigned int prmStartSlot, 
+	void OEShaderResource::SetForPixelShader(unsigned int prmStartSlot, 
 											 unsigned int prmNumViews)
 	{
 		ID3D11DeviceContext* pDeviceContext = 
@@ -64,7 +64,7 @@ namespace OE_SDK
 
 
 
-	void C_ShaderResource::SetForVertexShader(unsigned int prmStartSlot,
+	void OEShaderResource::SetForVertexShader(unsigned int prmStartSlot,
 											  unsigned int prmNumViews)
 	{
 		ID3D11DeviceContext* pDeviceContext =

@@ -7,15 +7,15 @@
 
 namespace OE_SDK
 {
-	const char* C_PixelShader::PS_SM = "ps_5_0";
+	const char* OEPixelShader::PS_SM = "ps_5_0";
 
-	C_PixelShader::C_PixelShader()
+	OEPixelShader::OEPixelShader()
 	{
 		m_ShaderData = new(ShaderData);
 	}
 
 
-	C_PixelShader::~C_PixelShader()
+	OEPixelShader::~OEPixelShader()
 	{
 	}
 
@@ -33,13 +33,13 @@ namespace OE_SDK
 	}*/
 	
 
-	void C_PixelShader::Create(const String FileName, const String EntryPoint)
+	void OEPixelShader::Create(const String FileName, const String EntryPoint)
 	{
 		WString Temp = WString(FileName.begin(), FileName.end());
 		LPCWSTR File = LPCWSTR(Temp.c_str());
 		LPCSTR Entry = EntryPoint.c_str();
 
-		C_GraphicsAPI* pGraphics = g_GraphicsAPI().instancePtr();
+		OEGraphicsAPI* pGraphics = g_GraphicsAPI().instancePtr();
 
 		if (FAILED(D3DCompileFromFile(File, NULL, D3D_COMPILE_STANDARD_FILE_INCLUDE, Entry, PS_SM, D3DCOMPILE_DEBUG | D3DCOMPILE_ENABLE_STRICTNESS, 0, &m_ShaderData->myShader, &m_ShaderData->pErrors)))
 		{

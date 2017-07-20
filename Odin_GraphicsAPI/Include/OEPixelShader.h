@@ -5,11 +5,11 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT  C_PixelShader : public C_GraphicsShaders
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT  OEPixelShader : public OEGraphicsShaders
 	{
 	public: 
-		C_PixelShader();
-		virtual ~C_PixelShader();
+		OEPixelShader();
+		virtual ~OEPixelShader();
 
 		
 		//virtual void CompileFromFile(const WCHAR* FileName, const char* EntryPoint, const char* ShaderModel);

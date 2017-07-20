@@ -3,14 +3,14 @@
 
 namespace OE_SDK
 {
-	C_Texture1D::C_Texture1D()
+	OETexture1D::OETexture1D()
 	{
 	}
-	C_Texture1D::~C_Texture1D()
+	OETexture1D::~OETexture1D()
 	{
 	}
 
-	void C_Texture1D::LoadFromFile(const char* FileName)
+	void OETexture1D::LoadFromFile(const char* FileName)
 	{
 		SIZE_T FileSize;
 		char* TextureInfo;
@@ -22,11 +22,11 @@ namespace OE_SDK
 		//	m_TextureData->myTexture1D = TextureInfo;
 
 	}
-	void C_Texture1D::CreateEmpty()
+	void OETexture1D::CreateEmpty()
 	{
 		m_TextureData->myTexture1D;
 	}
-	void C_Texture1D::Release()
+	void OETexture1D::Release()
 	{}
 
 

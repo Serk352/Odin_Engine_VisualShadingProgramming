@@ -6,11 +6,11 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_DepthStencil
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEDepthStencil
 	{
 	public:
-		C_DepthStencil();
-		~C_DepthStencil();
+		OEDepthStencil();
+		~OEDepthStencil();
 
 
 		void Create(uint32 width, uint32 height);

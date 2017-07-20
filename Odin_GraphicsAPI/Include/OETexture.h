@@ -8,11 +8,11 @@ namespace OE_SDK
 {
 
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_GraphicsTexture
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsTexture
 	{
 	public:
-		C_GraphicsTexture() {};
-		virtual ~C_GraphicsTexture() {};
+		OEGraphicsTexture() {};
+		virtual ~OEGraphicsTexture() {};
 
 	protected:
 

@@ -225,6 +225,7 @@
     <ClInclude Include="Include\OEMaterial.h" />
     <ClInclude Include="Include\OEMesh.h" />
     <ClInclude Include="Include\OEModel.h" />
+    <ClInclude Include="Include\OEResourcesManager.h" />
     <ClInclude Include="Include\OEShaders.h" />
     <ClInclude Include="Include\OETexture.h" />
     <ClInclude Include="Include\OEHullShader.h" />

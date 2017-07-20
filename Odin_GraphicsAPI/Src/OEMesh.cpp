@@ -5,11 +5,11 @@
 namespace OE_SDK
 {
 
-	void C_GraphicsMesh::Init()
+	void OEGraphicsMesh::Init()
 	{
 	}
 
-	void C_GraphicsMesh::Render()
+	void OEGraphicsMesh::Render()
 	{
 		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
 		m_IndexBuffer.SetBuffer(0);
@@ -22,7 +22,7 @@ namespace OE_SDK
 		pDeviceContext->DrawIndexed(static_cast<UINT>(m_Size), 0, 0);
 	}
 
-	void C_GraphicsMesh::Release()
+	void OEGraphicsMesh::Release()
 	{
 	}
 

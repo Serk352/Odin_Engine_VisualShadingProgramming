@@ -11,11 +11,11 @@
 namespace OE_SDK
 {
 	template<typename T>
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_IndexBufferTemplate //: public C_GraphicsBuffer
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEIndexBufferTemplate //: public C_GraphicsBuffer
 	{
 	public:
-		C_IndexBufferTemplate();
-		virtual ~C_IndexBufferTemplate();
+		OEIndexBufferTemplate();
+		virtual ~OEIndexBufferTemplate();
 
 		virtual	void Create(int32 flags);
 
@@ -34,7 +34,7 @@ namespace OE_SDK
 		Vector<T> m_IndexVector;
 	};
 
-	typedef C_IndexBufferTemplate<uint16> C_IndexBuffer16;
-	typedef C_IndexBufferTemplate<uint32> C_IndexBuffer32;
+	typedef OEIndexBufferTemplate<uint16> C_IndexBuffer16;
+	typedef OEIndexBufferTemplate<uint32> C_IndexBuffer32;
 
 }

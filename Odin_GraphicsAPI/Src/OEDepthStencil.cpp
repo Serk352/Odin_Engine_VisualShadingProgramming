@@ -5,7 +5,7 @@
 namespace OE_SDK
 {
 
-	struct  C_DepthStencil::DepthStencilData
+	struct  OEDepthStencil::DepthStencilData
 	{
 		ID3D11DepthStencilView* m_pObject;
 		ID3D11Texture2D* m_pTexture;
@@ -17,18 +17,18 @@ namespace OE_SDK
 		}
 	};
 
-	C_DepthStencil::C_DepthStencil()
+	OEDepthStencil::OEDepthStencil()
 	{
 		m_DepthStencil = new DepthStencilData;
 	}
 
-	C_DepthStencil::~C_DepthStencil()
+	OEDepthStencil::~OEDepthStencil()
 	{
 		delete m_DepthStencil;
 	}
 
 
-	void C_DepthStencil::Create(uint32 width, uint32 height)
+	void OEDepthStencil::Create(uint32 width, uint32 height)
 	{
 		ID3D11Device* pDevice = reinterpret_cast<ID3D11Device*>(g_GraphicsAPI().GetDevice());
 		
@@ -60,13 +60,13 @@ namespace OE_SDK
 
 	}
 
-	void C_DepthStencil::Set()
+	void OEDepthStencil::Set()
 	{
 
 	}
 
 
-	void C_DepthStencil::Clear()
+	void OEDepthStencil::Clear()
 	{
 		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
 
@@ -74,12 +74,12 @@ namespace OE_SDK
 	}
 
 
-	void* C_DepthStencil::GetObj()
+	void* OEDepthStencil::GetObj()
 	{
 		return reinterpret_cast<void*>(m_DepthStencil->m_pObject);
 	}
 
-	void** C_DepthStencil::GetReference()
+	void** OEDepthStencil::GetReference()
 	{
 		return reinterpret_cast<void**>(&m_DepthStencil->m_pObject);
 	}

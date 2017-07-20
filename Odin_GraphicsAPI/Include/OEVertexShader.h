@@ -7,11 +7,11 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT  C_VertexShader : public C_GraphicsShaders
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT  OEVertexShader : public OEGraphicsShaders
 	{
 	public:
-		C_VertexShader();
-		virtual ~C_VertexShader();
+		OEVertexShader();
+		virtual ~OEVertexShader();
 
 		//virtual void CompileFromFile(const WCHAR* FileName, const char* EntryPoint, const char* ShaderModel);
 		void Create(const String FileName, const String EntryPoint);

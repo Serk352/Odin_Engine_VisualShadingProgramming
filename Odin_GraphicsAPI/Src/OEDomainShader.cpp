@@ -7,21 +7,21 @@
 
 namespace OE_SDK
 {
-	const char* C_DomainShader::DS_SM = "ds_5_0";
+	const char* OEDomainShader::DS_SM = "ds_5_0";
 
-	C_DomainShader::C_DomainShader()
+	OEDomainShader::OEDomainShader()
 	{
 		m_ShaderData = new(ShaderData);
 	}
 
 
-	C_DomainShader::~C_DomainShader()
+	OEDomainShader::~OEDomainShader()
 	{
 		delete m_ShaderData;
 	}
 
 
-	void C_DomainShader::Create(const String FileName, const String EntryPoint)
+	void OEDomainShader::Create(const String FileName, const String EntryPoint)
 	{
 		WString Temp = WString(FileName.begin(), FileName.end());
 		LPCWSTR File = LPCWSTR(Temp.c_str());

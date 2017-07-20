@@ -9,18 +9,15 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_GraphicsMaterial
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsMaterial
 	{
 	public:
-		C_GraphicsMaterial();
-		~C_GraphicsMaterial();
+		OEGraphicsMaterial();
+		~OEGraphicsMaterial();
 
 
-		C_Texture2D m_Normal;
-		C_Texture2D m_Albedo; 
-
-		C_Matrix4 m_World;
-		C_Matrix4 m_View;
+		OETexture2D m_Normal;
+		OETexture2D m_Albedo; 
 
 		//Ruta de las texturas 
 		String m_SNormalPath;
@@ -36,7 +33,7 @@ namespace OE_SDK
 	protected:
 		//aqui van los shaders
 
-		C_VertexShader
+		OEVertexShader
 	};
 
 }

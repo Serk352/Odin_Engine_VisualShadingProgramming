@@ -4,11 +4,11 @@
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT GraphicsDeviceContext
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsDeviceContext
 	{
 	public:
-		GraphicsDeviceContext();
-		~GraphicsDeviceContext();
+		OEGraphicsDeviceContext();
+		~OEGraphicsDeviceContext();
 		
 		void* GetObj();
 		void** GetReference();

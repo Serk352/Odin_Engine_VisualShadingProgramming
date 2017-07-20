@@ -4,12 +4,12 @@
 namespace OE_SDK
 {
 
-	void C_AnimationMesh::Init()
+	void OEAnimationMesh::Init()
 	{
 
 	}
 
-	void C_AnimationMesh::Render(GraphicsDeviceContext* prmDeviceContext)
+	void OEAnimationMesh::Render(OEGraphicsDeviceContext* prmDeviceContext)
 	{
 		m_IndexBuffer.SetBuffer(0);
 		m_VertexAnimationBuffer.SetBuffer(prmDeviceContext, 0);
@@ -24,7 +24,7 @@ namespace OE_SDK
 	}
 
 
-	void C_AnimationMesh::Release()
+	void OEAnimationMesh::Release()
 	{
 
 	}

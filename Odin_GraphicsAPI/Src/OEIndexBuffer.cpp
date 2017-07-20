@@ -6,26 +6,26 @@
 namespace OE_SDK
 {
 	template<typename T>
-	struct C_IndexBufferTemplate<T>::BufferData
+	struct OEIndexBufferTemplate<T>::BufferData
 	{
 		ID3D11Buffer* m_pObject;
 	};
 	
 	template<typename T>
-	C_IndexBufferTemplate<T>::C_IndexBufferTemplate()
+	OEIndexBufferTemplate<T>::OEIndexBufferTemplate()
 	{
 		m_Buffer = new BufferData;
 		m_Buffer->m_pObject = nullptr;
 	}
 
 	template<typename T>
-	C_IndexBufferTemplate<T>::~C_IndexBufferTemplate()
+	OEIndexBufferTemplate<T>::~OEIndexBufferTemplate()
 	{
 		SAFE_DELETE(m_Buffer);
 	}
 
 	template<typename T>
-	void C_IndexBufferTemplate<T>::Create(int32)
+	void OEIndexBufferTemplate<T>::Create(int32)
 	{
 		D3D11_SUBRESOURCE_DATA resourceData;
 		memset(&resourceData, 0, sizeof(D3D11_SUBRESOURCE_DATA));
@@ -46,14 +46,14 @@ namespace OE_SDK
 	}
 
 	template<typename T>
-	void C_IndexBufferTemplate<T>::SetBuffer(uint32 StartSlot)
+	void OEIndexBufferTemplate<T>::SetBuffer(uint32 StartSlot)
 	{
 		UNREFERENCED_PARAMETER(StartSlot);
 		//Log: Debe informar que este formato no está soportado
 	}
 
 	template<>
-	void C_IndexBufferTemplate<uint16>::SetBuffer(uint32 StartSlot)
+	void OEIndexBufferTemplate<uint16>::SetBuffer(uint32 StartSlot)
 	{
 		UNREFERENCED_PARAMETER(StartSlot);
 		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
@@ -61,7 +61,7 @@ namespace OE_SDK
 	}
 
 	template<>
-	void C_IndexBufferTemplate<uint32>::SetBuffer(uint32 StartSlot)
+	void OEIndexBufferTemplate<uint32>::SetBuffer(uint32 StartSlot)
 	{
 		UNREFERENCED_PARAMETER(StartSlot);
 		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());
@@ -70,24 +70,24 @@ namespace OE_SDK
 
 
 	template<typename T>
-	void C_IndexBufferTemplate<T>::InsertIndex(T prmIndex)
+	void OEIndexBufferTemplate<T>::InsertIndex(T prmIndex)
 	{
 		m_IndexVector.push_back(prmIndex);
 	}
 
 
 	template<typename T>
-	void C_IndexBufferTemplate<T>::InsertIndexVector(const Vector<T>& prmIndex)
+	void OEIndexBufferTemplate<T>::InsertIndexVector(const Vector<T>& prmIndex)
 	{
 		m_IndexVector.insert(m_IndexVector.end(), prmIndex.begin(), prmIndex.end());
 	}
 
 	template<typename T>
-	SIZE_T C_IndexBufferTemplate<T>::GetIndexCount()
+	SIZE_T OEIndexBufferTemplate<T>::GetIndexCount()
 	{
 		return m_IndexVector.size();
 	}
 
-	template class C_IndexBufferTemplate<uint16>;
-	template class C_IndexBufferTemplate<uint32>;
+	template class OEIndexBufferTemplate<uint16>;
+	template class OEIndexBufferTemplate<uint32>;
 }

@@ -10,13 +10,13 @@ namespace OE_SDK
 
 
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_Animation
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEAnimation
 	{
 
 	public:
 
-		C_Animation() {};
-		~C_Animation() {};
+		OEAnimation() {};
+		~OEAnimation() {};
 
 
 	protected:

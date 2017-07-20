@@ -7,12 +7,12 @@
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_Buffer
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEBuffer
 	{
 	public:
 
-		C_Buffer();
-		~C_Buffer();
+		OEBuffer();
+		~OEBuffer();
 
 		void Create(void* prmData, SIZE_T ByteSize);
 

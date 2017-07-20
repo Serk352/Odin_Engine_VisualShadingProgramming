@@ -8,17 +8,17 @@
 
 namespace OE_SDK
 {
-	typedef C_IndexBufferTemplate<uint32> C_IndexBuffer32;
+	typedef OEIndexBufferTemplate<uint32> C_IndexBuffer32;
 
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_AnimationMesh
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEAnimationMesh
 	{
 	public:
 
 		//
 		void Init();
 		//
-		void Render(GraphicsDeviceContext* prmDeviceContext);
+		void Render(OEGraphicsDeviceContext* prmDeviceContext);
 		//
 		void Release();
 
@@ -26,7 +26,7 @@ namespace OE_SDK
 		SIZE_T m_Size;
 
 
-		C_AnimationVertexBuffer m_VertexAnimationBuffer;
+		OEAnimationVertexBuffer m_VertexAnimationBuffer;
 		C_IndexBuffer32 m_IndexBuffer;
 
 	};

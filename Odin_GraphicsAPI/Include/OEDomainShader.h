@@ -5,11 +5,11 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_DomainShader : public C_GraphicsShaders
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEDomainShader : public OEGraphicsShaders
 	{
 	public:
-		C_DomainShader();
-		~C_DomainShader();
+		OEDomainShader();
+		~OEDomainShader();
 
 
 		void Create(const String FileName, const String EntryPoint);

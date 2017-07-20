@@ -3,11 +3,11 @@
 namespace OE_SDK
 {
 
-	C_GraphicsMaterial::C_GraphicsMaterial()
+	OEGraphicsMaterial::OEGraphicsMaterial()
 	{
 	}
 
-	C_GraphicsMaterial::~C_GraphicsMaterial()
+	OEGraphicsMaterial::~OEGraphicsMaterial()
 	{
 	}
 
@@ -21,7 +21,7 @@ namespace OE_SDK
 		*Matrices (mundo, vista, projección)
 	*/
 
-	void C_GraphicsMaterial::Init()
+	void OEGraphicsMaterial::Init()
 	{
 		
 	}
@@ -30,7 +30,7 @@ namespace OE_SDK
 	/*
 		Cambiar las variables que deban cambiarse
 	*/
-	void C_GraphicsMaterial::Update()
+	void OEGraphicsMaterial::Update()
 	{
 
 	}

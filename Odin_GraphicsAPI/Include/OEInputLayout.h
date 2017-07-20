@@ -7,16 +7,16 @@
 
 namespace OE_SDK
 {
-	class C_VertexShader;
+	class OEVertexShader;
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_InputLayout
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEInputLayout
 	{
 	public:
-		C_InputLayout();
-		~C_InputLayout();
+		OEInputLayout();
+		~OEInputLayout();
 
 		//Métodos
-		void create(C_VertexShader* prmVSShader);
+		void create(OEVertexShader* prmVSShader);
 		void AddInputElement(const char* prmSemanticName, uint32 prmSemanticIndex ,DXGI_FORMAT prmFormat, uint32 prmInputSlot, 
 			                 uint32 prmAlignedByteOffset, D3D11_INPUT_CLASSIFICATION prmInputSlotClass, uint32 prmInstanceDataStepRate);
 		void Set();

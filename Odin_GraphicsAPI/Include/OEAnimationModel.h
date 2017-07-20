@@ -7,19 +7,19 @@
 namespace OE_SDK
 {
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_AnimationModel
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEAnimationModel
 	{
 	public:
-		C_AnimationModel();
-		~C_AnimationModel();
+		OEAnimationModel();
+		~OEAnimationModel();
 
 
 		void Init();
-		bool LoadFromFile(const char* strFileName, GraphicsDevice* prmDevice);
-		void Render(GraphicsDeviceContext* prmDeviceContext);
+		bool LoadFromFile(const char* strFileName, OEGraphicsDevice* prmDevice);
+		void Render(OEGraphicsDeviceContext* prmDeviceContext);
 		void Release();
 
-		Vector<C_AnimationMesh*> m_Meshes;
+		Vector<OEAnimationMesh*> m_Meshes;
 
 
 	};

@@ -4,7 +4,7 @@
 
 namespace OE_SDK
 {
-	struct C_RenderTargetView::sRenderTargetData
+	struct OERenderTargetView::sRenderTargetData
 	{
 		ID3D11RenderTargetView* m_pObject;
 
@@ -14,30 +14,30 @@ namespace OE_SDK
 		}
 	};
 
-	C_RenderTargetView::C_RenderTargetView()
+	OERenderTargetView::OERenderTargetView()
 	{
 		m_RenderTarget = new sRenderTargetData;
 	}
 
-	C_RenderTargetView::~C_RenderTargetView()
+	OERenderTargetView::~OERenderTargetView()
 	{
 		delete m_RenderTarget;
 	}
 
 
 
-	void C_RenderTargetView::Create(const C_Texture2D& prmTexture)
+	void OERenderTargetView::Create(const OETexture2D& prmTexture)
 	{
-		ID3D11Texture2D* pTexture = reinterpret_cast<ID3D11Texture2D*>(const_cast<C_Texture2D&>(prmTexture).GetObj());
+		ID3D11Texture2D* pTexture = reinterpret_cast<ID3D11Texture2D*>(const_cast<OETexture2D&>(prmTexture).GetObj());
 		ID3D11Device* pDevice = reinterpret_cast<ID3D11Device*>(g_GraphicsAPI().GetDevice());
 		pDevice->CreateRenderTargetView(pTexture, NULL, &m_RenderTarget->m_pObject);
 	}
 
-	void* C_RenderTargetView::GetObj()
+	void* OERenderTargetView::GetObj()
 	{
 		return reinterpret_cast<void*>(m_RenderTarget->m_pObject);
 	}
-	void** C_RenderTargetView::GetReference()
+	void** OERenderTargetView::GetReference()
 	{
 		return reinterpret_cast<void**>(&m_RenderTarget->m_pObject);
 	}

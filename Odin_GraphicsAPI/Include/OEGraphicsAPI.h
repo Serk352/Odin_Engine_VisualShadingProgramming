@@ -11,12 +11,12 @@ namespace OE_SDK
 
 
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_GraphicsAPI : public Module<C_GraphicsAPI>
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsAPI : public Module<OEGraphicsAPI>
 	{
 	public:
 
-		C_GraphicsAPI();
-		~C_GraphicsAPI();
+		OEGraphicsAPI();
+		~OEGraphicsAPI();
 
 		
 		//C_Camera myCam;
@@ -40,7 +40,7 @@ namespace OE_SDK
 		//RenderTarget View
 		void* GetRenderTargetViewObject();
 		void** GetRenderTargetViewReference();
-		void SetRenderTargets(const Vector<C_RenderTargetView*>& prmRendertargetsViews, const C_DepthStencil& prmDepthStencil);
+		void SetRenderTargets(const Vector<OERenderTargetView*>& prmRendertargetsViews, const OEDepthStencil& prmDepthStencil);
 
 		//ShaderResource View
 		void* GetShaderResourceViewnObject();
@@ -68,6 +68,6 @@ namespace OE_SDK
 				
 	};
 
-	ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_GraphicsAPI& g_GraphicsAPI();
+	ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsAPI& g_GraphicsAPI();
 }
 

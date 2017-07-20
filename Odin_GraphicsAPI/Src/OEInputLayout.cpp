@@ -6,24 +6,24 @@
 
 namespace OE_SDK
 {
-	struct C_InputLayout::InputLayoutData
+	struct OEInputLayout::InputLayoutData
 	{
 		ID3D11InputLayout* m_pObject;
 		Vector<D3D11_INPUT_ELEMENT_DESC> m_vElements;
 	};
 
-	C_InputLayout::C_InputLayout()
+	OEInputLayout::OEInputLayout()
 	{
 		//m_InputLayoutData->m_VertexLayout = nullptr;
 		m_InputLayoutData = new(InputLayoutData);
 	}
 
-	C_InputLayout::~C_InputLayout()
+	OEInputLayout::~OEInputLayout()
 	{
 		SAFE_DELETE(m_InputLayoutData);
 	}
 
-	void C_InputLayout::create(C_VertexShader* prmVShader)
+	void OEInputLayout::create(OEVertexShader* prmVShader)
 	{
 	//	m_InputLayoutData = new(InputLayoutData);
 
@@ -43,7 +43,7 @@ namespace OE_SDK
 	}
 
 
-	void C_InputLayout::AddInputElement(const char * prmSemanticName, uint32 prmSemanticIndex, DXGI_FORMAT prmFormat, uint32 prmInputSlot, uint32 prmAlignedByteOffset, D3D11_INPUT_CLASSIFICATION prmInputSlotClass, uint32 prmInstanceDataStepRate)
+	void OEInputLayout::AddInputElement(const char * prmSemanticName, uint32 prmSemanticIndex, DXGI_FORMAT prmFormat, uint32 prmInputSlot, uint32 prmAlignedByteOffset, D3D11_INPUT_CLASSIFICATION prmInputSlotClass, uint32 prmInstanceDataStepRate)
 	{
 		//Descriptor que se incluirá al vector
 
@@ -63,7 +63,7 @@ namespace OE_SDK
 
 	}
 
-	void C_InputLayout::Set()
+	void OEInputLayout::Set()
 	{
 		//Setear el/los "Valores" de Input Layout
 		ID3D11DeviceContext* pDeviceContext = reinterpret_cast<ID3D11DeviceContext*>(g_GraphicsAPI().GetDeviceContext());

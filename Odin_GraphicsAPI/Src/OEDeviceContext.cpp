@@ -4,19 +4,19 @@
 namespace OE_SDK
 {
 
-	struct GraphicsDeviceContext::DeviceContextData	
+	struct OEGraphicsDeviceContext::DeviceContextData	
 	{
 		ID3D11DeviceContext* m_pObj;
 	};
 
-	GraphicsDeviceContext::GraphicsDeviceContext()
+	OEGraphicsDeviceContext::OEGraphicsDeviceContext()
 	{
 		m_DeviceContext = new DeviceContextData;
 		m_DeviceContext->m_pObj = nullptr;
 	}
 
 
-	GraphicsDeviceContext::~GraphicsDeviceContext()
+	OEGraphicsDeviceContext::~OEGraphicsDeviceContext()
 	{
 		SAFE_DELETE(m_DeviceContext);
 	}
@@ -24,12 +24,12 @@ namespace OE_SDK
 
 
 
-	void* GraphicsDeviceContext::GetObj()
+	void* OEGraphicsDeviceContext::GetObj()
 	{
 		return reinterpret_cast<void*> (m_DeviceContext->m_pObj);
 	}
 
-	void** GraphicsDeviceContext::GetReference()
+	void** OEGraphicsDeviceContext::GetReference()
 	{
 		return reinterpret_cast<void**>(&m_DeviceContext->m_pObj); 
 	}

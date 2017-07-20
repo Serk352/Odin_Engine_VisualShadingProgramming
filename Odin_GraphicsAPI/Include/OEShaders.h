@@ -28,11 +28,11 @@ namespace OE_SDK
 #endif
 	};
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_GraphicsShaders
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsShaders
 	{
 	public:
-		C_GraphicsShaders();
-		virtual ~C_GraphicsShaders();
+		OEGraphicsShaders();
+		virtual ~OEGraphicsShaders();
 
 
 		ShaderData* m_ShaderData;

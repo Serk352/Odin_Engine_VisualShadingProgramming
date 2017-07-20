@@ -14,9 +14,9 @@
 
 namespace OE_SDK
 {
-	typedef C_IndexBufferTemplate<uint32> C_IndexBuffer32;
+	typedef OEIndexBufferTemplate<uint32> C_IndexBuffer32;
 		
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_GraphicsMesh
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsMesh
 	{
 	public:
 
@@ -32,7 +32,7 @@ namespace OE_SDK
 
 		SIZE_T m_Size;
 
-		C_VertexBuffer m_VertexBuffer;
+		OEVertexBuffer m_VertexBuffer;
 		//C_VertexAnimationBuffer m_VertexAnimationBuffer;
 		C_IndexBuffer32 m_IndexBuffer; 
 

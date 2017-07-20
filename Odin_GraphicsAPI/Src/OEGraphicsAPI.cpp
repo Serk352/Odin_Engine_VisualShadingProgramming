@@ -17,18 +17,18 @@ namespace OE_SDK
 {
 
 
-	struct C_GraphicsAPI::ApiData
+	struct OEGraphicsAPI::ApiData
 	{
 		HWND					   m_Hwnd;
 		ID3D11RenderTargetView*    m_RenderTargetView;
 		ID3D11ShaderResourceView*  m_ShaderResourceView;
 		D3D11_VIEWPORT*			   m_viewports;
-		C_DepthStencil			  m_DepthStencil;
-		C_SwapChain					m_SwapChain;
+		OEDepthStencil			  m_DepthStencil;
+		OESwapChain					m_SwapChain;
 
 
-		GraphicsDeviceContext   m_DeviceContext;
-		GraphicsDevice	m_Device;
+		OEGraphicsDeviceContext   m_DeviceContext;
+		OEGraphicsDevice	m_Device;
 
 		ApiData()
 		{
@@ -39,13 +39,13 @@ namespace OE_SDK
 	};
 
 
-	C_GraphicsAPI::C_GraphicsAPI()
+	OEGraphicsAPI::OEGraphicsAPI()
 	{
 		m_APIData = new ApiData;
 	}
 
 
-	C_GraphicsAPI::~C_GraphicsAPI()
+	OEGraphicsAPI::~OEGraphicsAPI()
 	{
 		CleanUp();
 	}
@@ -56,7 +56,7 @@ namespace OE_SDK
 
 
 	//Iniciar DirectX
-	void C_GraphicsAPI::Init(void* scrHandle,
+	void OEGraphicsAPI::Init(void* scrHandle,
 		uint32 width,
 		uint32 height,
 		bool fullscreen)
@@ -123,25 +123,25 @@ namespace OE_SDK
 
 
 
-	void C_GraphicsAPI::SetRenderTargets(const OE_SDK::Vector<C_RenderTargetView*>& prmRendertargetsViews, const C_DepthStencil& prmDepthStencil)
+	void OEGraphicsAPI::SetRenderTargets(const OE_SDK::Vector<OERenderTargetView*>& prmRendertargetsViews, const OEDepthStencil& prmDepthStencil)
 	{
 		ID3D11DeviceContext* pDeviceContext = NULL; //reinterpret_cast<ID3D11DeviceContext*>(m_APIData->m_DeviceContext.GetObj());
 		
 		Vector<ID3D11RenderTargetView*> TargetsViews;
 		for (int i = 0; i<prmRendertargetsViews.size(); ++i)
 		{
-			ID3D11RenderTargetView* ActualView = reinterpret_cast<ID3D11RenderTargetView*>( const_cast<Vector<C_RenderTargetView*>&>(prmRendertargetsViews)[i]->GetObj() );
+			ID3D11RenderTargetView* ActualView = reinterpret_cast<ID3D11RenderTargetView*>( const_cast<Vector<OERenderTargetView*>&>(prmRendertargetsViews)[i]->GetObj() );
 			TargetsViews.push_back(ActualView);
 		}
 //////////////////////////////////////////////////////////////////////////
-		ID3D11DepthStencilView* pDepthStencil = reinterpret_cast<ID3D11DepthStencilView*>(const_cast<C_DepthStencil&>(prmDepthStencil).GetObj());
+		ID3D11DepthStencilView* pDepthStencil = reinterpret_cast<ID3D11DepthStencilView*>(const_cast<OEDepthStencil&>(prmDepthStencil).GetObj());
 		pDeviceContext->OMGetRenderTargets(static_cast<UINT>(prmRendertargetsViews.size()), &TargetsViews[0], &pDepthStencil);
 
 	}
 
 
 	//Liberar los punteros
-	void C_GraphicsAPI::CleanUp()
+	void OEGraphicsAPI::CleanUp()
 	{
 		if (m_APIData) {
 			//SAFE_RELEASE(m_APIData->m_SwapChain);
@@ -152,102 +152,102 @@ namespace OE_SDK
 	}
 
 	//////////////////////////////////////////////////////////////////////////
-	void* C_GraphicsAPI::GetDevice()
+	void* OEGraphicsAPI::GetDevice()
 	{
 		return m_APIData->m_Device.GetObj();
 	}
 
 
-	void** C_GraphicsAPI::GetDeviceReference()
+	void** OEGraphicsAPI::GetDeviceReference()
 	{
 		return m_APIData->m_Device.GetReference();
 	}
 
 	//////////////////////////////////////////////////////////////////////////
-	void* C_GraphicsAPI::GetDeviceContext()
+	void* OEGraphicsAPI::GetDeviceContext()
 	{
 		return m_APIData->m_DeviceContext.GetObj();
 	}
 
 
-	void** C_GraphicsAPI::GetDeviceContextReference()
+	void** OEGraphicsAPI::GetDeviceContextReference()
 	{
 		return m_APIData->m_DeviceContext.GetReference();
 	}
 
 	//////////////////////////////////////////////////////////////////////////
-	void* C_GraphicsAPI::GetSwapChainObject()
+	void* OEGraphicsAPI::GetSwapChainObject()
 	{
 
 		return m_APIData->m_SwapChain.GetObj();
 	}
 
-	void** C_GraphicsAPI::GetSwapChainReference()
+	void** OEGraphicsAPI::GetSwapChainReference()
 	{
 		return m_APIData->m_SwapChain.GetReference();
 	}
 
-	void C_GraphicsAPI::PresentSwapChain()
+	void OEGraphicsAPI::PresentSwapChain()
 	{
 		m_APIData->m_SwapChain.Present();
 	}
 //////////////////////////////////////////////////////////////////////////
 
-	void* C_GraphicsAPI::GetRenderTargetViewObject()
+	void* OEGraphicsAPI::GetRenderTargetViewObject()
 	{
 		return reinterpret_cast<void*> (m_APIData->m_RenderTargetView);
 	}
 
-	void** C_GraphicsAPI::GetRenderTargetViewReference()
+	void** OEGraphicsAPI::GetRenderTargetViewReference()
 	{
 		return reinterpret_cast<void**> (&m_APIData->m_RenderTargetView);
 	}
 
 //////////////////////////////////////////////////////////////////////////
-	void* C_GraphicsAPI::GetShaderResourceViewnObject()
+	void* OEGraphicsAPI::GetShaderResourceViewnObject()
 	{
 
 		return reinterpret_cast<void*> (m_APIData->m_ShaderResourceView);
 	}
 
-	void** C_GraphicsAPI::GetShaderResourceViewReference()
+	void** OEGraphicsAPI::GetShaderResourceViewReference()
 	{
 		return reinterpret_cast<void**> (&m_APIData->m_ShaderResourceView);
 	}
 //////////////////////////////////////////////////////////////////////////
 
-	void* C_GraphicsAPI::GetDepthStencilViewObject()
+	void* OEGraphicsAPI::GetDepthStencilViewObject()
 	{
 
 		return m_APIData->m_DepthStencil.GetObj();
 	}
 
-	void** C_GraphicsAPI::GetDepthStencilViewReference()
+	void** OEGraphicsAPI::GetDepthStencilViewReference()
 	{
 		return m_APIData->m_DepthStencil.GetReference();
 	}
 
-	void C_GraphicsAPI::ClearDepthStencil()
+	void OEGraphicsAPI::ClearDepthStencil()
 	{
 		m_APIData->m_DepthStencil.Clear();
 	}
 //////////////////////////////////////////////////////////////////////////
 	
-	void* C_GraphicsAPI::GetViewPortObject()
+	void* OEGraphicsAPI::GetViewPortObject()
 	{
 
 		return reinterpret_cast<void*> (m_APIData->m_viewports);
 	}
 
-	void** C_GraphicsAPI::GetViewPortReference()
+	void** OEGraphicsAPI::GetViewPortReference()
 	{
 		return reinterpret_cast<void**> (&m_APIData->m_viewports);
 	}
 //////////////////////////////////////////////////////////////////////////
 
-	ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT C_GraphicsAPI & g_GraphicsAPI()
+	ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsAPI & g_GraphicsAPI()
 	{
-		return C_GraphicsAPI::instance();
+		return OEGraphicsAPI::instance();
 	}
 
 }

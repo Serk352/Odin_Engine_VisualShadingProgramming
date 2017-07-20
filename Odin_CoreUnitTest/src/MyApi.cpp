@@ -60,8 +60,8 @@ namespace OE_SDK
 		m_Normal.LoadFromFile("Resources/Textures/N2.jpg", true, 4, nFormats::FORMAT_R8G8B8A8_UNORM, nBindFlags::BIND_SHADER_RESOURCE);
 
 		//Recurso para el shader
-		C_ShaderResource ColorView;
-		C_ShaderResource NormalView;
+		OEShaderResource ColorView;
+		OEShaderResource NormalView;
 		
 		ColorView.Create(m_Color, 1, 0);
 		NormalView.Create(m_Normal, 1, 0);

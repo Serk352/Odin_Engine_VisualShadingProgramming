@@ -5,18 +5,18 @@
 
 namespace OE_SDK
 {
-	struct C_Sampler::SamplerData
+	struct OESampler::SamplerData
 	{
 		ID3D11SamplerState* pObject;
 	};
 
-	C_Sampler::C_Sampler()
+	OESampler::OESampler()
 	{
 		m_Sampler = new SamplerData;
 		m_Sampler->pObject = nullptr;
 	}
 
-	C_Sampler::~C_Sampler()
+	OESampler::~OESampler()
 	{
 		SAFE_DELETE(m_Sampler);
 	}
@@ -24,7 +24,7 @@ namespace OE_SDK
 
 	//////////////////////////////////////////////////////////////////////////
 
-	void C_Sampler::CreateSamplerState(nSamplingFilters::eSamplingFilter prmFilter,
+	void OESampler::CreateSamplerState(nSamplingFilters::eSamplingFilter prmFilter,
 									   nTextureAddresModes::eTextureAddresMode prmU,
 									   nTextureAddresModes::eTextureAddresMode prmV,
 									   nTextureAddresModes::eTextureAddresMode prmW,
@@ -49,7 +49,7 @@ namespace OE_SDK
 
 	}
 
-	void C_Sampler::SetForVertexShader(unsigned int StartSlot, 
+	void OESampler::SetForVertexShader(unsigned int StartSlot, 
 									   unsigned int NumSamplers)
 	{
 
@@ -61,7 +61,7 @@ namespace OE_SDK
 									  &m_Sampler->pObject);
 	}
 
-	void C_Sampler::SetForPixelShader(unsigned int StartSlot,
+	void OESampler::SetForPixelShader(unsigned int StartSlot,
 									  unsigned int NumSamplers)
 	{
 
@@ -74,13 +74,13 @@ namespace OE_SDK
 	}
 
 
-	void* C_Sampler::GetObj()
+	void* OESampler::GetObj()
 	{
 		return reinterpret_cast<void*>(m_Sampler->pObject);
 	}
 
 
-	void** C_Sampler::GetReference()
+	void** OESampler::GetReference()
 	{
 		return reinterpret_cast<void**>(&m_Sampler->pObject);
 	}

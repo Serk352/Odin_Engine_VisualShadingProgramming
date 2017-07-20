@@ -18,21 +18,21 @@
 
 namespace OE_SDK
 {
-	C_AnimationModel::C_AnimationModel()
+	OEAnimationModel::OEAnimationModel()
 	{
 
 	}
-	C_AnimationModel::~C_AnimationModel()
-	{
-
-	}
-
-	void C_AnimationModel::Init()
+	OEAnimationModel::~OEAnimationModel()
 	{
 
 	}
 
-	void AddBone(Node<Bone>* pParent, aiNode* pParentAssimp, C_Skeleton* MySkeletal)
+	void OEAnimationModel::Init()
+	{
+
+	}
+
+	void AddBone(Node<Bone>* pParent, aiNode* pParentAssimp, OESkeleton* MySkeletal)
 	{
 		MySkeletal->m_RootNode.m_Father = NULL;
 			
@@ -57,7 +57,7 @@ namespace OE_SDK
 
 
 	//Cargar una animación desde un archivo
-	bool C_AnimationModel::LoadFromFile(const char * strFileName, GraphicsDevice* prmDevice)
+	bool OEAnimationModel::LoadFromFile(const char * strFileName, OEGraphicsDevice* prmDevice)
 	{
 		Assimp::Importer myImporter = Assimp::Importer();
 
@@ -77,7 +77,7 @@ namespace OE_SDK
 		if (myScene->HasAnimations())
 		{
 		
-			C_Animation tempAnimation;
+			OEAnimation tempAnimation;
 
 			aiAnimation* myAnim;
 
@@ -123,9 +123,9 @@ namespace OE_SDK
 				//Guardo el mesh que esta en el espacio actual del arreglo de meshes de la escena, y lo guardo en un mesh temporal
 				aiMesh* pMesh = myScene->mMeshes[i];
 				//Ahora el mesh temporal lo inserto en mi vector de meshes
-				m_Meshes.push_back(new C_AnimationMesh());
+				m_Meshes.push_back(new OEAnimationMesh());
 				//igualo un mesh temporal al mesh de mi vector de meshes del espacio actul
-				C_AnimationMesh& TempMesh = *m_Meshes[i];
+				OEAnimationMesh& TempMesh = *m_Meshes[i];
 	
 				
 			//	aiAnimation* myAnim = myScene->mAnimations[i];
@@ -133,7 +133,7 @@ namespace OE_SDK
 
 				//Utilizo un Vertíce Temporal
 				VertexAnim TempV;
-				C_Skeleton tempSkeleton;
+				OESkeleton tempSkeleton;
 
 				//Este ciclo se utiliza para navegar entre los vertíces del mesh
 				for (uint32 j = 0; j < pMesh->mNumVertices; j++)
@@ -356,7 +356,7 @@ namespace OE_SDK
 		return true;
 	}
 
-	void C_AnimationModel::Render(GraphicsDeviceContext* prmDeviceContext)
+	void OEAnimationModel::Render(OEGraphicsDeviceContext* prmDeviceContext)
 	{
 
 		for (uint32 i = 0; i < m_Meshes.size(); i++)
@@ -366,7 +366,7 @@ namespace OE_SDK
 
 	}
 
-	void C_AnimationModel::Release()
+	void OEAnimationModel::Release()
 	{
 	}
 
