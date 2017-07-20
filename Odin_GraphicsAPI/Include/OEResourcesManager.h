@@ -1,6 +1,9 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
 #include "OETexture2D.h"
+#include "OEModel.h"
+#include "OEPixelShader.h"
+#include "OEVertexShader.h"
 
 namespace OE_SDK
 {
@@ -17,12 +20,21 @@ namespace OE_SDK
 	public:
 
 		//Cargar una textura
-		void loadTexture(String SourcePath, int& m_Width, int& m_Height);
+		void loadTexture(const char* sSourcePath, 
+						 int& rWidth, 
+						 int& rHeight, 
+						 int& rNumChannels);
 		//Cargar un model
-		void loadModel  (String SourcePath);
+		void loadModel  (const char* sSourcePath);
 		//Cargar un shader
-		void LoadShader (String SourcePath);
+		void LoadShader (const char* sSourcePath);
 
+		void RequestTexture();
+		void RequestModel();
+		void RequestShader();
+
+	protected: 
+		Vector<*> m_LoadedResources;
 	};
 
 }

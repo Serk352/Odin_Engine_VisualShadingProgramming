@@ -62,7 +62,7 @@ namespace OE_SDK
 
 
 		//3D Model
-		OEGraphicsModel myModel;
+		OEModel myModel;
 
 		OEVertexBuffer m_GuiVertexBuffer;
 		C_IndexBuffer32 m_GuiIndexBuffer;

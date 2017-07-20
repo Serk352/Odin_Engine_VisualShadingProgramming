@@ -25,7 +25,7 @@ namespace OE_SDK
 		virtual void InitResources(int width, int Height);
 
 		//C_GraphicsAPI m_GraphicsAPI;
-		OEGraphicsModel myModel;
+		OEModel myModel;
 
 
 	public:

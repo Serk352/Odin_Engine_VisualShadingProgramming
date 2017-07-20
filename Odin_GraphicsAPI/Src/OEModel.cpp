@@ -11,11 +11,11 @@
 //<> se llaman corchetes angulares
 namespace OE_SDK
 {
-	OEGraphicsModel::OEGraphicsModel()
+	OEModel::OEModel()
 	{
 
 	}
-	OEGraphicsModel::~OEGraphicsModel()
+	OEModel::~OEModel()
 	{
 
 	}
@@ -23,12 +23,12 @@ namespace OE_SDK
 	//Si voy acrear un nuevo objeto es un Device
 	//Si vas a modificar un objeto existente es un DeviceContext
 
-	void OEGraphicsModel::Init()
+	void OEModel::Init()
 	{
 
 	}
 
-	bool OEGraphicsModel::LoadFromFile(const char * strFileName)
+	bool OEModel::LoadFromFile(const char * strFileName)
 	{
 		//ID3D11Device* pDevice = reinterpret_cast<ID3D11Device*>(prmDevice->GetObj());
 		Assimp::Importer myImporter;
@@ -181,7 +181,7 @@ namespace OE_SDK
 
 
 
-	void OEGraphicsModel::Render()
+	void OEModel::Render()
 	{
 
 
@@ -192,7 +192,7 @@ namespace OE_SDK
 
 	}
 
-	void OEGraphicsModel::Release()
+	void OEModel::Release()
 	{
 	}
 

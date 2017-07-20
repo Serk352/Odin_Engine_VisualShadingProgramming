@@ -137,6 +137,9 @@
     <ClInclude Include="Include\OEResourcesManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\OEAnimationMesh.cpp">

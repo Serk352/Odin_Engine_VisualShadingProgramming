@@ -246,6 +246,7 @@
     <ClInclude Include="Include\OEAnimationVertexBuffer.h" />
     <ClInclude Include="Include\OEVertexBuffer.h" />
     <ClInclude Include="Include\OEVertexShader.h" />
+    <ClInclude Include="Include\Resources.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\OEAnimationMesh.cpp" />

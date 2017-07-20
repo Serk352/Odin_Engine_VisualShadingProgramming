@@ -4,9 +4,9 @@
 
 namespace OE_SDK
 {
-	void OEResourceManager::loadTexture(String SourcePath, int& m_Width, int& m_Height)
+	void OEResourceManager::loadTexture(const char* sSourcePath, int& rWidth, int& rHeight, int& rNumChannels)
 	{
-		uint8* LoadTexture = stbi_load(SourcePath, )
+		uint8* LoadTexture = stbi_load(sSourcePath, &rWidth, &rHeight, NULL, rNumChannels);
 	}
 
 
