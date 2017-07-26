@@ -4,6 +4,7 @@
 #include "OEModel.h"
 #include "OEPixelShader.h"
 #include "OEVertexShader.h"
+#include "OEResources.h"
 
 namespace OE_SDK
 {
@@ -34,7 +35,7 @@ namespace OE_SDK
 		void RequestShader();
 
 	protected: 
-		Vector<*> m_LoadedResources;
+		Vector<OEResource*> m_LoadedResources;
 	};
 
 }

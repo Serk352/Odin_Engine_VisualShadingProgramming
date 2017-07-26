@@ -3,20 +3,14 @@
 #include "OEVertex.h"
 #include "OEIndexBuffer.h"
 #include "OEVertexBuffer.h"
-//#include "OEAnimationVertexBuffer.h"
 #include "OEDeviceContext.h"
-
-/*
-#if ODIN_ENGINE_PLATFORM == ODIN_ENGINE_PLATFORM_WIN32
-#	include <d3d11.h>
-#endif
-*/
+#include "OEResources.h"
 
 namespace OE_SDK
 {
 	typedef OEIndexBufferTemplate<uint32> C_IndexBuffer32;
 		
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsMesh
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsMesh : public OEResource
 	{
 	public:
 

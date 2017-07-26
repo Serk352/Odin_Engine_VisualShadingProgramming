@@ -1,6 +1,7 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
-#include "OEShaders.h"
+//#include "OEShaders.h"
+#include "OEResources.h"
 
 #if ODIN_ENGINE_PLATFORM == ODIN_ENGINE_PLATFORM_WIN32
 #	include <d3d11.h>
@@ -28,7 +29,7 @@ namespace OE_SDK
 #endif
 	};
 
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsShaders
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEGraphicsShaders : public OEResource
 	{
 	public:
 		OEGraphicsShaders();

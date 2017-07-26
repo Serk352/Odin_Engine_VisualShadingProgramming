@@ -2,10 +2,11 @@
 #include "OEPrerequisitesGraphics.h"
 #include "OEMesh.h"
 #include "OEDeviceContext.h"
+#include "OEResources.h"
 
 namespace OE_SDK
 {
-	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEModel
+	class ODIN_ENGINE_GRAPHICS_API_UTILITY_EXPORT OEModel : public OEResource
 	{
 		public:
 			OEModel();
