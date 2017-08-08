@@ -4,9 +4,33 @@
 
 namespace OE_SDK
 {
-	void OEResourceManager::loadTexture(const char* sSourcePath, int& rWidth, int& rHeight, int& rNumChannels)
+	void OEResourceManager::loadResource(const String* sSourcePath,nResourceType::eResourceType ResourceType)
 	{
-		uint8* LoadTexture = stbi_load(sSourcePath, &rWidth, &rHeight, NULL, rNumChannels);
+		if (IsLoaded(sSourcePath));
+		{
+			///nada
+		}
+		else
+		{
+			if (ResourceType == TEXTURE_2D)
+			{
+				Resources a;
+
+				a.name = sSourcePath;
+				const char* ccPath = sSourcePath->c_str();
+				uint8* LoadTexture = stbi_load(ccPath, &rWidth, &rHeight, NULL, rNumChannels);
+				a.m_Info = reinterpret_cast<void*>(LoadTexture);
+
+
+				m_LoadedResources.push(a);
+
+
+
+
+				stbi_image_free(LoadTexture);
+			}
+		}
+
 	}
 
 

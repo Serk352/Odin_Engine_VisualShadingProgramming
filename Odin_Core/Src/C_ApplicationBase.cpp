@@ -1,7 +1,7 @@
 #pragma once
 #include "C_ApplicationBase.h"
 #include <windows.h>
-
+#include <dinput.h>
 
 namespace OE_SDK
 {
@@ -14,6 +14,9 @@ namespace OE_SDK
 	C_ApplicationBase::~C_ApplicationBase()
 	{																					 
 	}																								                   	
+
+	
+	
 
 //TODO: Terminar la bomba de mensajes, en especial re-size 
 	LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)

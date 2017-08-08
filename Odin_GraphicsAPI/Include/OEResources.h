@@ -12,7 +12,7 @@ namespace OE_SDK
 		virtual ~OEResource() {};
 
 		String m_Name;
-
-
+		void* m_Info;
+		
 	};
 }

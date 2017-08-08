@@ -27,12 +27,18 @@
     <ClInclude Include="Include\OdinCoreDefines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\OEInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\C_ApplicationBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Src\C_ODinParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\OEInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

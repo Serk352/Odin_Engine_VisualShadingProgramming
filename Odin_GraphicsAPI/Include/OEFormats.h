@@ -847,4 +847,13 @@ namespace OE_SDK
 
 
 	}
+
+	namespace nResourceType
+	{
+		typedef enum eResourceType
+		{
+			TEXTURE_2D = 0,
+			SHADER = 1
+		}eResourceType;
+	}
 }

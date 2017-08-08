@@ -202,11 +202,13 @@
     <ClInclude Include="Include\C_ApplicationBase.h" />
     <ClInclude Include="Include\C_OdinParser.h" />
     <ClInclude Include="Include\OdinCoreDefines.h" />
+    <ClInclude Include="Include\OEInput.h" />
     <ClInclude Include="Include\PrerequisitesCore.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\C_ApplicationBase.cpp" />
     <ClCompile Include="Src\C_ODinParser.cpp" />
+    <ClCompile Include="Src\OEInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Odin_GraphicsAPI\Odin_GraphicsAPI.vcxproj">

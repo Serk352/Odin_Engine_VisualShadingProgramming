@@ -5,6 +5,7 @@
 #include "OEPixelShader.h"
 #include "OEVertexShader.h"
 #include "OEResources.h"
+#include "OEFormats.h"
 
 namespace OE_SDK
 {
@@ -21,21 +22,21 @@ namespace OE_SDK
 	public:
 
 		//Cargar una textura
-		void loadTexture(const char* sSourcePath, 
-						 int& rWidth, 
-						 int& rHeight, 
-						 int& rNumChannels);
+		void loadResource(const String* sSourcePath, nResourceType::eResourceType ResourceType);
 		//Cargar un model
-		void loadModel  (const char* sSourcePath);
+		void loadModel(const String* sSourcePath);
 		//Cargar un shader
-		void LoadShader (const char* sSourcePath);
+		void LoadShader (const String* sSourcePath);
 
-		void RequestTexture();
+		void RequestResource(const String* sSourcePath);
 		void RequestModel();
 		void RequestShader();
 
+
 	protected: 
 		Vector<OEResource*> m_LoadedResources;
+		bool IsLoaded(const String* sSourcePath);
+
 	};
 
 }
