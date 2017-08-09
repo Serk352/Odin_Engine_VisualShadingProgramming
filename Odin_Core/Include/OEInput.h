@@ -4,6 +4,7 @@
 
 namespace OE_SDK
 {
+	//Abstract Direct Input Objects to only be used in .cpp
 	class	ODIN_ENGINE_COREUTILITY_EXPORT OEInput
 	{
 	public: 
@@ -15,7 +16,17 @@ namespace OE_SDK
 		void ShutDown();
 		bool Frame();
 		//////////////////////////////////////////////////////////////////////////
-		bool IsEscapePressed();
+		//Check for some keyboard keys 
+		bool Is_Escape_Pressed();
+		bool Is_W_Pressed();
+		bool Is_S_Pressed();
+		bool Is_A_Pressed(); 
+		bool Is_D_Pressed();
+
+		bool Is_1_Pressed();
+		bool Is_2_Pressed();
+
+
 		void GetMouseLocation(int&, int&);
 
 	private:

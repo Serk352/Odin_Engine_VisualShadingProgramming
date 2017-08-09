@@ -24,7 +24,7 @@ namespace OE_SDK
 	}
 	void OETexture1D::CreateEmpty()
 	{
-		m_TextureData->myTexture1D;
+		//m_TextureData->myTexture1D;
 	}
 	void OETexture1D::Release()
 	{}

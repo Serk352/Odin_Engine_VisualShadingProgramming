@@ -6,7 +6,7 @@ namespace OE_SDK
 {
 	void OEResourceManager::loadResource(const String* sSourcePath,nResourceType::eResourceType ResourceType)
 	{
-		if (IsLoaded(sSourcePath));
+	/*	if (IsLoaded(sSourcePath));
 		{
 			///nada
 		}
@@ -30,7 +30,7 @@ namespace OE_SDK
 				stbi_image_free(LoadTexture);
 			}
 		}
-
+		*/
 	}
 
 

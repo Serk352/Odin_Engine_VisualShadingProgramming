@@ -125,21 +125,175 @@ namespace OE_SDK
 
 	bool OEInput::Frame()
 	{
-	
+		bool result;
+
+		//Read the current state of the keyboard
+		result = ReadKeyboard();
+		if (FAILED(result))
+		{
+			return false;
+		}
+		//Read the current state fo the mouse
+		result = ReadMouse();
+		if (FAILED(result))
+		{
+			return false;
+		}
+
+		//Process the changes in the mouse and keyboard
+		ProcessInput();
+
+		return true; 
+
 	}
 
-	bool OEInput::IsEscapePressed()
-	{}
-	void OEInput::GetMouseLocation(int& , int&)
-	{}
+
+	//Template function for all the key pressed in the keyboar
+	bool OEInput::Is_Escape_Pressed()
+	{	
+		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
+		if (m_KeyboardState[DIK_ESCAPE] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+	bool OEInput::Is_W_Pressed() 
+	{	
+		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
+		if (m_KeyboardState[DIK_W] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	bool OEInput::Is_S_Pressed() 
+	{	
+		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
+		if (m_KeyboardState[DIK_S] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	bool OEInput::Is_A_Pressed() 
+	{	
+		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
+		if (m_KeyboardState[DIK_A] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	bool OEInput::Is_D_Pressed() 
+	{	
+		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
+		if (m_KeyboardState[DIK_D] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	bool OEInput::Is_1_Pressed()
+	{	
+		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
+		if (m_KeyboardState[DIK_1] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+	bool OEInput::Is_2_Pressed()
+	{	
+		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
+		if (m_KeyboardState[DIK_2] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	void OEInput::GetMouseLocation(int& MouseX, int& MouseY)
+	{
+		MouseX = m_mouseX;
+		MouseY = m_mouseY;
+		return;
+	}
 
 
 
 	bool OEInput::ReadKeyboard()
-	{}
+	{
+		HRESULT result;
+		//Read the keyboard device 
+		result = m_Keyboard->GetDeviceState(sizeof(m_KeyboardState), (LPVOID)&m_KeyboardState);
+		if (FAILED(result))
+		{
+			//If the keyboard lost focus or was not acquired then try to get control back
+			if ((result == DIERR_INPUTLOST) || (result == DIERR_NOTACQUIRED))
+			{
+				m_Keyboard->Acquire();
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
 	bool OEInput::ReadMouse()
-	{}
+	{
+		HRESULT result;
+		//Read the mouse device
+		result = m_Mouse->GetDeviceState(sizeof(DIMOUSESTATE), (LPVOID)&m_MouseState);
+		if (FAILED(result))
+		{
+			//If the mouse lost focus or was not acquired then try to get control back
+			if ((result == DIERR_INPUTLOST) || (result == DIERR_NOTACQUIRED))
+			{
+				m_Mouse->Acquire();
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
 	void OEInput::ProcessInput()
-	{}
+	{
+		//Update the location of the mouse cursor based on the change of the mouse locantion during the frame
+		m_mouseX += m_MouseState.lX;
+		m_mouseY += m_MouseState.lY;
+
+		//Ensure the mouse locantion doesn´t exceed the screen widht or height
+		if (m_mouseX < 0) 
+		{ 
+			m_mouseX = 0; 
+		}
+		if (m_mouseY < 0)
+		{
+			m_mouseY = 0; 
+		}
+
+		//(m_mouseX < 0) ? m_mouseX = 0 : ;
+		//(m_mouseY < 0) ? m_mouseY= 0 : ;
+
+		if (m_mouseX > m_screenWidth)
+		{
+			m_mouseX = m_screenWidth;
+		}
+		if (m_mouseY > m_screenHeight)
+		{
+			m_mouseY = m_screenHeight;
+		}
+		return;
+	}
 
 }
