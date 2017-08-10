@@ -1,5 +1,6 @@
 #pragma once
 #include "PrerequisitesCore.h"
+#define DIRECTINPUT_VERSION 0x0800
 #include <dinput.h>
 
 namespace OE_SDK
@@ -27,7 +28,7 @@ namespace OE_SDK
 		bool Is_2_Pressed();
 
 
-		void GetMouseLocation(int&, int&);
+		void GetMouseLocation(int& MouseX, int& MouseY);
 
 	private:
 		//////////////////////////////////////////////////////////////////////////

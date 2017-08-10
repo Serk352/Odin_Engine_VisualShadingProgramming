@@ -8,6 +8,7 @@ namespace OE_SDK
 //Constructor//
 	C_ApplicationBase::C_ApplicationBase()
 	{
+		m_Input = nullptr;
 	}
 
 //Destructor//
@@ -17,7 +18,7 @@ namespace OE_SDK
 
 	
 	
-
+	HINSTANCE HInst;
 //TODO: Terminar la bomba de mensajes, en especial re-size 
 	LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	{
@@ -35,6 +36,8 @@ namespace OE_SDK
 
 	void C_ApplicationBase::Init(int width, int Height)
 	{
+	
+		HRESULT result; 
 		WNDCLASSEXW wcex;
 
 		wcex.cbSize = sizeof(WNDCLASSEX);
@@ -53,8 +56,14 @@ namespace OE_SDK
 
 		RegisterClassExW(&wcex);
 
-		HWND hWnd = CreateWindowW((L"ODIN_ENGINE_APP_CLASS"), (L"VENTANITA"), WS_OVERLAPPEDWINDOW,
+
+		/*HWND hWnd = CreateWindowW((L"ODIN_ENGINE_APP_CLASS"), (L"VENTANITA"), WS_OVERLAPPEDWINDOW,
 			CW_USEDEFAULT, CW_USEDEFAULT, Height, width, nullptr, nullptr, 0, nullptr);
+			*/
+
+
+		HWND hWnd = CreateWindowW((L"ODIN_ENGINE_APP_CLASS"), (L"VENTANITA"), WS_OVERLAPPEDWINDOW,
+			CW_USEDEFAULT, CW_USEDEFAULT, Height, width, nullptr, nullptr, HInst, nullptr);
 
 
 		ShowWindow(hWnd, SW_SHOW);
@@ -62,6 +71,21 @@ namespace OE_SDK
 
 		RECT clientRect;	
 		::GetClientRect(hWnd, &clientRect);
+
+		//Create Input Object 
+
+		m_Input = new OEInput; 
+
+
+		//Initialize the input object
+
+		result=	m_Input->Initialize(0, hWnd, width, Height);
+
+		if (FAILED(result))
+		{
+
+		}
+	
 
 		g_GraphicsAPI().startUp();
 
@@ -78,6 +102,11 @@ namespace OE_SDK
 
 	void C_ApplicationBase::Destroy()
 	{
+		//Destroy input
+		m_Input->ShutDown();
+		delete m_Input;
+		m_Input = 0;
+
 		//Destruye DirectX
 		g_GraphicsAPI().shutDown();
 		OnDestroy();
@@ -102,10 +131,15 @@ namespace OE_SDK
 			{
 				break;
 			}
-
 			//TODO: Usar un contador de tiempo real para actualizar la lógica
 			Update(1.f/60.f);
 			Render();
+			
+			if (m_Input->Is_1_Pressed())
+			{
+
+			}
+
 		}
 
 		Destroy();
@@ -115,6 +149,14 @@ namespace OE_SDK
 
 	void C_ApplicationBase::Update(float)
 	{
+		int mouseX = 0;
+		int mouseY = 0;
+
+		m_Input->Frame();
+
+		//Get the location of the mouse from the input object
+		m_Input->GetMouseLocation(mouseX, mouseY);
+
 
 	}
 

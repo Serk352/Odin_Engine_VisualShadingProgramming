@@ -1,5 +1,6 @@
 #include "OEInput.h"
 
+
 namespace OE_SDK
 {
 
@@ -25,7 +26,8 @@ namespace OE_SDK
 		m_mouseY = 0;
 
 		//Initialize the main DirectInput interface.
-		result = DirectInput8Create(hInstance, 0x0800, IID_IDirectInput8, (void**)&m_DirectInput, NULL);
+		//DirectInputCreateEx(hInstance, DIRECTINPUT_VERSION, )
+		result = DirectInput8Create(hInstance, DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&m_DirectInput, NULL);
 		if (FAILED(result))
 		{
 			return false;
@@ -167,7 +169,6 @@ namespace OE_SDK
 		}
 		return false;
 	}
-
 	bool OEInput::Is_S_Pressed() 
 	{	
 		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
@@ -177,7 +178,6 @@ namespace OE_SDK
 		}
 		return false;
 	}
-	
 	bool OEInput::Is_A_Pressed() 
 	{	
 		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
@@ -187,7 +187,6 @@ namespace OE_SDK
 		}
 		return false;
 	}
-	
 	bool OEInput::Is_D_Pressed() 
 	{	
 		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
@@ -197,7 +196,6 @@ namespace OE_SDK
 		}
 		return false;
 	}
-
 	bool OEInput::Is_1_Pressed()
 	{	
 		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.

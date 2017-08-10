@@ -6,7 +6,7 @@
 #include "OEPixelShader.h"
 #include "OEInputLayout.h"
 #include "OEModel.h"
-
+#include "OEInput.h"
 
 namespace OE_SDK
 {
@@ -32,5 +32,12 @@ namespace OE_SDK
 		void Init(int width, int Height);
 		void Destroy();
 	
+	protected:
+
+		OEInput* m_Input; 
+
+
+
+
 	};
 }
