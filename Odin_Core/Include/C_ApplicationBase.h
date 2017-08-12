@@ -32,10 +32,12 @@ namespace OE_SDK
 		void Init(int width, int Height);
 		void Destroy();
 	
+
 	protected:
 
 		OEInput* m_Input; 
-
+		uint32 m_MouseX;
+		uint32 m_MouseY;
 
 
 

@@ -19,6 +19,7 @@ namespace OE_SDK
 		//////////////////////////////////////////////////////////////////////////
 		//Check for some keyboard keys 
 		bool Is_Escape_Pressed();
+
 		bool Is_W_Pressed();
 		bool Is_S_Pressed();
 		bool Is_A_Pressed(); 
@@ -27,6 +28,8 @@ namespace OE_SDK
 		bool Is_1_Pressed();
 		bool Is_2_Pressed();
 
+		bool Is_LeftMouseButton_Pressed();
+		bool Is_RightMouseButton_Pressed();
 
 		void GetMouseLocation(int& MouseX, int& MouseY);
 
@@ -47,8 +50,12 @@ namespace OE_SDK
 
 		uint32 m_screenWidth;
 		uint32 m_screenHeight;
+
 		int32 m_mouseX;
 		int32 m_mouseY;
+
+		bool m_leftMouseButtonState;
+		bool m_RightMouseButtonState;
 
 	};
 }

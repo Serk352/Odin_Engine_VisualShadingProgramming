@@ -20,7 +20,7 @@ namespace OE_SDK
 
 
 		//public: cualquier puedo verlos
-		//protecte: mis hijos pueden verlas
+		//protected: mis hijos pueden verlas
 		//private: solo yo (clase) se de su existencia
 	protected:
 		//Se usan variables unsigned para los contadores, ya que estos jamas pueden ser negativos

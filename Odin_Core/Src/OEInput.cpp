@@ -9,6 +9,9 @@ namespace OE_SDK
 		m_DirectInput = nullptr;
 		m_Keyboard = nullptr;
 		m_Mouse = nullptr;
+
+		m_leftMouseButtonState = 0;
+		m_RightMouseButtonState = 0;
 	}
 
 	OEInput::~OEInput()
@@ -27,6 +30,8 @@ namespace OE_SDK
 
 		//Initialize the main DirectInput interface.
 		//DirectInputCreateEx(hInstance, DIRECTINPUT_VERSION, )
+
+		HINSTANCE h;
 		result = DirectInput8Create(hInstance, DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&m_DirectInput, NULL);
 		if (FAILED(result))
 		{
@@ -199,7 +204,7 @@ namespace OE_SDK
 	bool OEInput::Is_1_Pressed()
 	{	
 		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
-		if (m_KeyboardState[DIK_1] & 0x80)
+		if (m_KeyboardState[DIK_1] & 0x80 || m_KeyboardState[DIK_1] & 0x81)
 		{
 			return true;
 		}
@@ -214,6 +219,31 @@ namespace OE_SDK
 		}
 		return false;
 	}
+
+	bool OEInput::Is_LeftMouseButton_Pressed()
+	{
+		if (m_MouseState.rgbButtons[0] && !m_leftMouseButtonState)// & 0x80)
+		{
+			m_leftMouseButtonState = 1;
+			return true;
+		}
+
+		if (!m_MouseState.rgbButtons[0])
+		{
+			m_leftMouseButtonState = 0;
+			return false;
+		}
+		
+	}
+	bool OEInput::Is_RightMouseButton_Pressed()
+	{
+		if (m_MouseState.rgbButtons[1])// & 0x80)
+		{
+			return true;
+		}
+		else false;
+	}
+
 
 	void OEInput::GetMouseLocation(int& MouseX, int& MouseY)
 	{

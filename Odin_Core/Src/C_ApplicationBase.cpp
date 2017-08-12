@@ -40,13 +40,16 @@ namespace OE_SDK
 		HRESULT result; 
 		WNDCLASSEXW wcex;
 
+		//Esto es necesario para que la creación del input sea posible (3 dias encontrar este miserable error ¬_¬, aun debo entender el porqué)
+		HInst = GetModuleHandle(NULL);
+
 		wcex.cbSize = sizeof(WNDCLASSEX);
 
 		wcex.style = CS_HREDRAW | CS_VREDRAW;
 		wcex.lpfnWndProc = WndProc;
 		wcex.cbClsExtra = 0;
 		wcex.cbWndExtra = 0;
-		wcex.hInstance = 0;
+		wcex.hInstance = HInst;
 		wcex.hIcon = 0;
 		wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
 		wcex.hbrBackground = 0;
@@ -79,12 +82,6 @@ namespace OE_SDK
 
 		//Initialize the input object
 
-		result=	m_Input->Initialize(0, hWnd, width, Height);
-
-		if (FAILED(result))
-		{
-
-		}
 	
 
 		g_GraphicsAPI().startUp();
@@ -95,6 +92,15 @@ namespace OE_SDK
 			               clientRect.bottom - clientRect.top, 
 			               false);
 	
+
+		result = m_Input->Initialize(HInst, hWnd, width, Height);
+
+		if (FAILED(result))
+		{
+
+		}
+
+
 		OnInit();
 		InitResources(width, Height);
 		
@@ -135,10 +141,27 @@ namespace OE_SDK
 			Update(1.f/60.f);
 			Render();
 			
+			int a = 0;
+
 			if (m_Input->Is_1_Pressed())
 			{
-
+				a = 2;
 			}
+			int x = 0;
+			int y = 0;
+
+			if (m_Input->Is_LeftMouseButton_Pressed())
+			{
+				a = 5;
+			}
+
+			if (m_Input->Is_RightMouseButton_Pressed())
+			{
+				a = 7;
+			}
+
+
+			m_Input->GetMouseLocation(x, y);
 
 		}
 
