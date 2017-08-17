@@ -35,13 +35,14 @@ namespace OE_SDK
 		bool Is_O_Pressed();
 		bool Is_L_Pressed();
 
-
 		bool Is_1_Pressed();
 		bool Is_2_Pressed();
 
 		//Mouse buttons
 		bool Is_LeftMouseButton_Pressed();
 		bool Is_RightMouseButton_Pressed();
+
+		void Is_ScrollWheelMouse_Moving(int32& movement);
 
 		void GetMouseLocation(uint32& MouseX, uint32& MouseY);
 

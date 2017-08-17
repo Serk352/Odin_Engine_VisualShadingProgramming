@@ -318,6 +318,14 @@ namespace OE_SDK
 	}
 
 
+	void OEInput::Is_ScrollWheelMouse_Moving(int32& movemnet)
+	{
+		if (m_MouseState.lZ > -100 && m_MouseState.lZ < 100)
+		{
+			movemnet += m_MouseState.lZ / 10;
+		}
+	}
+
 	void OEInput::GetMouseLocation(uint32& MouseX, uint32& MouseY)
 	{
 		MouseX = m_mouseX;

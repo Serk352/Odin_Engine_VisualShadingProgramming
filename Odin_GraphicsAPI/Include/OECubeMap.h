@@ -1,6 +1,6 @@
 #pragma once
 #include "OEPrerequisitesGraphics.h"
-#include "OEFormats.h"
+
 
 namespace OE_SDK
 {
@@ -9,10 +9,7 @@ namespace OE_SDK
 	public:
 		OECubeMap();
 		~OECubeMap();
-		/*
-		void LoadFromFile(char* FileName,
-						  nFormats::eFormat myFormat,
-						  nBindFlags::eBindFlag prmBind);
-		*/
+
+
 	};
 }

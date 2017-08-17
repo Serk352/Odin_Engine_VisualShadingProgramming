@@ -24,10 +24,10 @@ namespace OE_SDK
 
 
 		void Create(int Width, 
-					   int Height, 
-					   bool isWritrable,
-					   nFormats::eFormat myFormat,
-					   nBindFlags::eBindFlag prmBind);
+					int Height, 
+					bool isWritrable,
+					nFormats::eFormat prmFormat,
+					nBindFlags::eBindFlag prmBind);
 
 		void LoadFromFile(char* FileName, 
 						  bool isWritable, 

@@ -11,7 +11,7 @@ namespace OE_SDK
 		m_Input = nullptr;
 		LBMStillPressed = false; 
 		RBMStillPressed = false;
-		
+		a = 0;
 		K1StillPressed = false;
 		K2StillPressed = false; 
 		KWStillPressed = false;
@@ -296,14 +296,16 @@ namespace OE_SDK
 				KDStillPressed = false;
 			}
 			//////////////////////////////////////////////////////////////////////////
-		
 			
+
+			//////////////////////////////////////////////////////////////////////////
 			if (m_Input->Is_K_Pressed() && KKStillPressed == false)
 			{
 				KKStillPressed = true;
 				if (EyeX < 10)
 				{
 					Eye.X += 0.1;
+					At.X += 0.1;
 				}
 				std::cout << m_RotateFactorY << std::endl;
 			}
@@ -318,6 +320,7 @@ namespace OE_SDK
 				if (EyeX > -10)
 				{
 					Eye.X -= 0.1;
+					At.X  -= 0.1;
 				}
 				std::cout << m_RotateFactorY << std::endl;
 			}
@@ -325,16 +328,14 @@ namespace OE_SDK
 			{
 				KJStillPressed = false;
 			}
-
 			//////////////////////////////////////////////////////////////////////////
-
 			if (m_Input->Is_O_Pressed() && KOStillPressed == false)
 			{
 				KOStillPressed = true;
 				if (EyeY < 10)
 				{
 					Eye.Y += 0.1;
-					//At.Y = 
+					At.Y  += 0.1;
 				}
 				std::cout << m_RotateFactorY << std::endl;
 			}
@@ -349,6 +350,7 @@ namespace OE_SDK
 				if (EyeY > -10)
 				{
 					Eye.Y -= 0.1;
+					At.Y -= 0.1;
 				}
 				std::cout << m_RotateFactorY << std::endl;
 			}
@@ -387,7 +389,20 @@ namespace OE_SDK
 				KXStillPressed = false;
 			}
 
+			
 
+			m_Input->Is_ScrollWheelMouse_Moving(a);
+			a += a;
+			if (Eye.Z > -100 && Eye.Z < 100)
+			{
+				Eye.Z += a; 
+			}
+
+
+			std::cout << a<<std::endl;
+
+			
+			
 			//////////////////////////////////////////////////////////////////////////
 			if (m_Input->Is_LeftMouseButton_Pressed()==true &&LBMStillPressed == false)
 			{

@@ -44,6 +44,7 @@ namespace OE_SDK
 		float EyeX;
 		float EyeY;
 		float EyeZ;
+		int a;
 
 
 /*		uint32 m_AumentX;

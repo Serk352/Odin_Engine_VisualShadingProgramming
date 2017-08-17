@@ -255,6 +255,7 @@
     <ClCompile Include="Src\OEAnimationModel.cpp" />
     <ClCompile Include="Src\OEBuffer.cpp" />
     <ClCompile Include="Src\OEConstantBuffer.cpp" />
+    <ClCompile Include="Src\OECubeMap.cpp" />
     <ClCompile Include="Src\OEDepthStencil.cpp" />
     <ClCompile Include="Src\OEDomainShader.cpp" />
     <ClCompile Include="Src\OEGraphicsAPI.cpp" />
