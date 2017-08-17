@@ -36,14 +36,40 @@ cbuffer MatrixProjection : register(b1)
     float4x4 ProjMatrix;
 };
 
+cbuffer MatrixWorld : register(b2)
+{
+    float4x4 WorldMatrix;
+}
+
+cbuffer MatrixScale: register(b3)
+{
+    float4x4 ScaleMatrix;
+}
+cbuffer MatrixRotateX: register(b4)
+{
+    float4x4 RotateXMatrix;
+}
+cbuffer MatrixRotateY : register(b5)
+{
+    float4x4 RotateYMatrix;
+}
+cbuffer MatrixRotateZ : register(b6)
+{
+    float4x4 RotateZMatrix;
+}
+cbuffer MatrixTranslate: register(b7)
+{
+    float4x4 TranslateMatrix;
+}
 
 
-cbuffer LigthPos : register(b2)
+
+cbuffer LigthPos : register(b8)
 {
     float4 LightP;
 }
 
-float4 Lightp : register(b2);
+//float4 Lightp : register(b8);
 SamplerState mySamplerColor : register(s0);
 SamplerState mySamplerNormal : register(s1);
 
@@ -56,8 +82,18 @@ VS_OUTPUT VS_MAIN(VS_INPUT Input)
 
     VS_OUTPUT Output = (VS_OUTPUT)0;
 
-    
-    float4x4 Final = mul(ViewMatrix, ProjMatrix);
+    float4x4 Rotate = mul(RotateXMatrix, RotateYMatrix);
+    Rotate = mul(Rotate, RotateZMatrix);
+
+  //  Rotate = RotateYMatrix;
+
+    float4x4 World = mul(WorldMatrix, ScaleMatrix);
+    World = mul(World, Rotate);
+    World = mul(World, TranslateMatrix);
+
+
+   float4x4 WorldView =  mul(World, ViewMatrix);
+    float4x4 Final = mul(WorldView, ProjMatrix);
 
   //  final = mul(ViewMatrix, ProjMatrix);
 
@@ -105,17 +141,13 @@ PS_OUTPUT PS_MAIN(VS_OUTPUT Input)
 
     float4 Color = (myTextureColor.Sample(mySamplerColor, Input.UV));
     
-    //Color = float4(1.0f, 0.0f, 0.0f, 1.0f);
 
+    // Output.Color = Color * incidence;
 
-    float4 NBeta = myTextureNormal.Sample(mySamplerNormal, Input.UV);
-   // Output.Color = Color * incidence;
-
-   float3 LPos = float3(0.5f,0.2f, 0.0f);
     
     float a = dot(LightP.xyz, Input.Normal);
 
-    Output.Color = NBeta; //float4(1.0f,0.0f,0.0f,0.0f) * a;
+    Output.Color = Color*incidence; // float4(1.0f, 0.0f, 0.0f, 0.0f)*a; //NBeta; //float4(1.0f,0.0f,0.0f,0.0f) * a;
 
     return Output;
 }

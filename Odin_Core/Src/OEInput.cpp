@@ -12,10 +12,17 @@ namespace OE_SDK
 
 		m_leftMouseButtonState = 0;
 		m_RightMouseButtonState = 0;
+		m_PinLeft = 0;
+
 	}
 
 	OEInput::~OEInput()
-	{}
+	{
+		m_DirectInput = nullptr;
+		m_Keyboard = nullptr;
+		m_Mouse = nullptr;
+
+	}
 
 	bool OEInput::Initialize(HINSTANCE hInstance, HWND hwnd, int widht, int heigt)
 	{
@@ -204,7 +211,7 @@ namespace OE_SDK
 	bool OEInput::Is_1_Pressed()
 	{	
 		//Do a bitwise and on the keyboard state to check if the scape key is currently being pressed.
-		if (m_KeyboardState[DIK_1] & 0x80 || m_KeyboardState[DIK_1] & 0x81)
+		if (m_KeyboardState[DIK_1] & 0x80)// || m_KeyboardState[DIK_1] & 0x81)
 		{
 			return true;
 		}
@@ -220,32 +227,98 @@ namespace OE_SDK
 		return false;
 	}
 
-	bool OEInput::Is_LeftMouseButton_Pressed()
+	bool OEInput::Is_Z_Pressed() //Acercar
 	{
-		if (m_MouseState.rgbButtons[0] && !m_leftMouseButtonState)// & 0x80)
+		if (m_KeyboardState[DIK_Z] & 0x80)
 		{
-			m_leftMouseButtonState = 1;
 			return true;
 		}
+		return false;
+	}
+	bool OEInput::Is_X_Pressed() //Alejar
+	{
+		if (m_KeyboardState[DIK_X] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+	//Mover en X
+	bool OEInput::Is_K_Pressed()
+	{
+		if (m_KeyboardState[DIK_K] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+	bool OEInput::Is_J_Pressed()
+	{
+		if (m_KeyboardState[DIK_J] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+	//Mover en Y
+	bool OEInput::Is_O_Pressed()
+	{
+		if (m_KeyboardState[DIK_O] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+	bool OEInput::Is_L_Pressed()
+	{
+		if (m_KeyboardState[DIK_L] & 0x80)
+		{
+			return true;
+		}
+		return false;
+	}
+
+
+	bool OEInput::Is_LeftMouseButton_Pressed()
+	{
+		if (m_MouseState.rgbButtons[0] && m_leftMouseButtonState==false)// & 0x80)
+		{
+			m_leftMouseButtonState = true;
+			return true;
+		}
+		else
+		{
+			m_leftMouseButtonState = false;
+			return false;
+		}
+
 
 		if (!m_MouseState.rgbButtons[0])
 		{
-			m_leftMouseButtonState = 0;
+			m_leftMouseButtonState = false;
 			return false;
 		}
 		
+
 	}
 	bool OEInput::Is_RightMouseButton_Pressed()
 	{
-		if (m_MouseState.rgbButtons[1])// & 0x80)
+		if (m_MouseState.rgbButtons[1] && !m_RightMouseButtonState)// & 0x80)
 		{
+			m_RightMouseButtonState = true;
+			
 			return true;
 		}
-		else false;
+
+		if (!m_MouseState.rgbButtons[1])
+		{
+			m_RightMouseButtonState = false;
+			return false;
+		}
 	}
 
 
-	void OEInput::GetMouseLocation(int& MouseX, int& MouseY)
+	void OEInput::GetMouseLocation(uint32& MouseX, uint32& MouseY)
 	{
 		MouseX = m_mouseX;
 		MouseY = m_mouseY;

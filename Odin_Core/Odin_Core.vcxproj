@@ -199,15 +199,15 @@
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Include\C_ApplicationBase.h" />
-    <ClInclude Include="Include\C_OdinParser.h" />
-    <ClInclude Include="Include\OdinCoreDefines.h" />
+    <ClInclude Include="Include\OEApplicationBase.h" />
+    <ClInclude Include="Include\OEParser.h" />
+    <ClInclude Include="Include\OECoreDefines.h" />
     <ClInclude Include="Include\OEInput.h" />
-    <ClInclude Include="Include\PrerequisitesCore.h" />
+    <ClInclude Include="Include\OEPrerequisitesCore.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\C_ApplicationBase.cpp" />
-    <ClCompile Include="Src\C_ODinParser.cpp" />
+    <ClCompile Include="Src\OEApplicationBase.cpp" />
+    <ClCompile Include="Src\OEParser.cpp" />
     <ClCompile Include="Src\OEInput.cpp" />
   </ItemGroup>
   <ItemGroup>

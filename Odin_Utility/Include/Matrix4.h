@@ -41,6 +41,76 @@ namespace OE_SDK
 
 		void operator=(const C_Matrix4& a);
 
+		static C_Matrix4 CreateRotateXMatrix(float Angle)
+		{
+
+			float a11 = PlatformMath::Cos(Angle);
+			float a12 = -(PlatformMath::Sin(Angle));
+			float a21 = PlatformMath::Sin(Angle);
+			float a22 = a11;
+
+			C_Vector4f a = C_Vector4f(1, 0,   0,   0);
+			C_Vector4f b = C_Vector4f(0, a11,  a21, 0);
+			C_Vector4f c = C_Vector4f(0, a12, a22, 0);
+			C_Vector4f d = C_Vector4f(0, 0, 0,   1);
+
+			return C_Matrix4(&a,&b,&c,&d);
+		}
+
+
+		static C_Matrix4 CreateRotateYMatrix(float Angle)
+		{
+
+			float a00 = PlatformMath::Cos(Angle);
+			float a02 = PlatformMath::Sin(Angle);
+			float a20 = -(PlatformMath::Sin(Angle));
+			float a22 = a00;
+
+			C_Vector4f a = C_Vector4f(a00, 0, a02, 0);
+			C_Vector4f b = C_Vector4f(0, 1, 0, 0);
+			C_Vector4f c = C_Vector4f(a20, 0, a22, 0);
+			C_Vector4f d = C_Vector4f(0, 0, 0, 1);
+			
+			return C_Matrix4(&a, &b, &c, &d);
+
+		}
+
+		static C_Matrix4 CreateRotateZMatrix(float Angle)
+		{
+			float a00 = PlatformMath::Cos(Angle);
+			float a01 = -(PlatformMath::Sin(Angle));
+			float a10 = PlatformMath::Sin(Angle);
+			float a11 = a00;
+
+			C_Vector4f a = C_Vector4f(a00, a10, 0, 0);
+			C_Vector4f b = C_Vector4f(a01, a11, 0, 0);
+			C_Vector4f c = C_Vector4f(0,	 0, 1, 0);
+			C_Vector4f d = C_Vector4f(0,	 0, 0, 1);
+
+			return C_Matrix4(&a, &b, &c, &d);
+		}
+
+		static C_Matrix4 CreateScaleMatrix(float ScalarX, float ScalarY, float ScalarZ)
+		{
+
+			C_Vector4f a = C_Vector4f(ScalarX, 0, 0, 0);
+			C_Vector4f b = C_Vector4f(0, ScalarY, 0, 0);
+			C_Vector4f c = C_Vector4f(0, 0, ScalarZ, 0);
+			C_Vector4f d = C_Vector4f(0, 0, 0, 1);
+
+			return C_Matrix4(&a, &b, &c, &d);
+		}
+
+		static C_Matrix4 CreateTranslateMatrix(float X, float Y, float Z)
+		{
+			C_Vector4f a = C_Vector4f(1, 0, 0, X);
+			C_Vector4f b = C_Vector4f(0, 1, 0, Y);
+			C_Vector4f c = C_Vector4f(0, 0, 1, Z);
+			C_Vector4f d = C_Vector4f(0, 0, 0, 1);
+
+
+			return C_Matrix4(&a, &b, &c, &d);	
+		}
 
 		C_Matrix4();
 		//C_Matrix4(C_Matrix4 a);

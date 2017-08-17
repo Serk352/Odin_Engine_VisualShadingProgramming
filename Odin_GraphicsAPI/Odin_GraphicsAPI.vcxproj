@@ -248,6 +248,7 @@
     <ClInclude Include="Include\OEVertexBuffer.h" />
     <ClInclude Include="Include\OEVertexShader.h" />
     <ClInclude Include="Include\Resources.h" />
+    <ClInclude Include="OECubeMap.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\OEAnimationMesh.cpp" />
